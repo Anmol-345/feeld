@@ -1043,27 +1043,18 @@ export default function MainContent() {
             </div>
             <div className="cta">
               <div className="flex flex-row gap-2">
-                <button type="button" className="group text-md font-normal rounded-full w-fit hover:transition-all duration-300 bg-primary-white text-primary-black cta-hover-shadow hover:transform=[scale(1.1)] hover:text-primary-black" title="App Store" style={{ "--cta-shadow-color": "#fff" }}>
-                  <a id="homepage-mid-cta-block-apple" href={TELEGRAM_URL} className="flex items-center py-3 px-[14px] block">
+                <button type="button" className="group text-md font-normal rounded-full w-fit hover:transition-all duration-300 bg-primary-white text-primary-black cta-hover-shadow hover:transform=[scale(1.1)] hover:text-primary-black" title="Register on Luma" style={{ "--cta-shadow-color": "#fff" }}>
+                  <a id="homepage-mid-cta-block-luma" href="https://luma.com/event/evt-h1pliwiKCfI15xJ" target="_blank" className="flex items-center py-3 px-6 block">
                     <span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path fillRule="evenodd" clipRule="evenodd" d="M14.6728 9.01074C15.1615 9.0257 15.6402 9.15131 16.0703 9.37793C16.5003 9.60456 16.87 9.92614 17.1504 10.3164C16.7089 10.5809 16.3437 10.9504 16.0879 11.3896C15.8321 11.8289 15.6942 12.3241 15.6875 12.8291C15.6881 13.3973 15.8603 13.9533 16.1826 14.4268C16.5049 14.9002 16.9631 15.2709 17.5 15.4922C17.2889 16.1605 16.9701 16.7918 16.5566 17.3633C16.0013 18.173 15.4192 18.9639 14.4951 18.9785C13.5974 18.9986 13.2954 18.4639 12.2656 18.4639C11.2262 18.4639 10.9041 18.9642 10.0429 18.999C9.16308 19.0305 8.49042 18.135 7.91501 17.333C6.76479 15.695 5.86969 12.7169 7.07029 10.6904C7.34747 10.2049 7.74866 9.79713 8.23532 9.50781C8.72203 9.21849 9.27786 9.05701 9.84763 9.03906C10.7284 9.02158 11.5464 9.61914 12.0879 9.61914C12.6192 9.61902 13.6303 8.90407 14.6728 9.01074ZM15.4873 5C15.5758 6.00704 15.2096 7.00423 14.4677 7.78027C14.1125 8.16525 13.6619 8.47535 13.1494 8.68652C12.6368 8.8977 12.0757 9.00508 11.5088 9C11.4726 8.51573 11.5462 8.02975 11.7256 7.57031C11.905 7.11085 12.187 6.68685 12.5547 6.32227C13.3066 5.57599 14.3538 5.10373 15.4873 5Z" fill="currentColor" />
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
                       </svg>
                     </span>
-                    <span className="ml-1 text-[18px] font-normal leading-[130%] font-feeld">
-                      {"App Store"}
-                    </span>
-                  </a>
-                </button>
-                <button type="button" className="group text-md font-normal rounded-full w-fit hover:transition-all duration-300 bg-primary-white text-primary-black cta-hover-shadow hover:transform=[scale(1.1)] hover:text-primary-black" title="Google Play" style={{ "--cta-shadow-color": "#fff" }}>
-                  <a id="homepage-mid-cta-block-google" href={TELEGRAM_URL} className="flex items-center py-3 px-4 block">
-                    <span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M7.3999 5C7.68885 5 7.95942 5.08164 8.19092 5.22363L14.563 9.00098L14.5073 9.05664L14.5698 9.00098L17.3237 10.6338L17.3296 10.6377C17.8053 10.9039 18.1264 11.4186 18.1265 12.0117C18.1265 12.6081 17.8007 13.1259 17.3208 13.3916L14.5815 15.0078L14.4644 14.8877L14.5737 15.0098L8.19482 18.7734L8.17627 18.7842C7.94852 18.9213 7.68298 19 7.3999 19C6.69203 19 6.09551 18.5086 5.92139 17.8408C5.92087 17.8398 5.92089 17.838 5.92041 17.8369L5.92529 17.8311C5.89153 17.7046 5.87354 17.5712 5.87354 17.4336V6.56445C5.87355 6.42704 5.89115 6.29385 5.92432 6.16699L5.92041 6.16309L5.92139 6.16113C6.09543 5.49279 6.69208 5.00012 7.3999 5Z" fill="currentColor" />
-                      </svg>
-                    </span>
-                    <span className="ml-1 text-[18px] font-normal leading-[130%] font-feeld">
-                      {"Google Play"}
+                    <span className="ml-2 text-[18px] font-normal leading-[130%] font-feeld">
+                      {"Register on Luma"}
                     </span>
                   </a>
                 </button>
@@ -1776,7 +1767,7 @@ export default function MainContent() {
                     </span>
                   </div>
                   <div className="assetContainer w-full h-[190px] tablet:h-[220px] laptop:h-[220px] relative overflow-hidden will-change-transform rounded-tr-[14px] rounded-b-[14px]">
-                    <img alt="" loading="lazy" decoding="async" data-nimg="fill" className="aspect-square object-cover rounded-tr-[14px] rounded-b-[14px] overflow-hidden imageAsset" src="/assets/image/upload/q_auto/v1770906053/TokenMingle_Over_30_Social_Landscape_3200x1600_nryqev_dhx2je.jpg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
+                    <img alt="" loading="lazy" decoding="async" data-nimg="fill" className="aspect-square object-cover rounded-tr-[14px] rounded-b-[14px] overflow-hidden imageAsset" src="/assets/image/upload/q_auto/v1770906053/Feeld_Over_30_Social_Landscape_3200x1600_nryqev_dhx2je.jpg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
                   </div>
                   <div className="flex flex-col gap-[6px]">
                     <div className="eventName w-full text-primary-white font-feeld text-[18px] leading-[120%] font-normal">
@@ -1802,7 +1793,7 @@ export default function MainContent() {
                     </span>
                   </div>
                   <div className="assetContainer w-full h-[190px] tablet:h-[220px] laptop:h-[220px] relative overflow-hidden will-change-transform rounded-tr-[14px] rounded-b-[14px]">
-                    <img alt="" loading="lazy" decoding="async" data-nimg="fill" className="aspect-square object-cover rounded-tr-[14px] rounded-b-[14px] overflow-hidden imageAsset" src="/assets/image/upload/q_auto/v1787605152/TokenMingle_Restroom_hiinvf.jpg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
+                    <img alt="" loading="lazy" decoding="async" data-nimg="fill" className="aspect-square object-cover rounded-tr-[14px] rounded-b-[14px] overflow-hidden imageAsset" src="/assets/image/upload/q_auto/v1787605152/Feeld_Restroom_hiinvf.jpg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
                   </div>
                   <div className="flex flex-col gap-[6px]">
                     <div className="eventName w-full text-primary-white font-feeld text-[18px] leading-[120%] font-normal">

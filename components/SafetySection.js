@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useEffect, useRef, useState } from 'react';
 
@@ -13,78 +13,28 @@ export default function SafetySection() {
   const itemRefs = useRef([]);
 
   useEffect(() => {
-    // On desktop (laptop), use scroll-trigger sticky behavior
-    const mq = window.matchMedia('(min-width: 1024px)');
-
-    if (!mq.matches) {
-      // Mobile: simple IntersectionObserver per item
-      const observers = itemRefs.current.map((el, idx) => {
-        if (!el) return null;
-        const obs = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) setActiveIndex(idx);
-          },
-          { threshold: 0.6 }
-        );
-        obs.observe(el);
-        return obs;
-      });
-      return () => observers.forEach((o) => o && o.disconnect());
-    }
-
-    // Desktop: scroll-driven sticky accordion
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ITEM_HEIGHT = 950 / items.length; // distribute evenly across scroll range
-
-    const onScroll = () => {
-      const rect = section.getBoundingClientRect();
-      const sectionTop = section.offsetTop;
-      const scrollY = window.scrollY;
-      const sectionH = section.offsetHeight;
-      const viewH = window.innerHeight;
-
-      // Progress from 0 (section enters) to 1 (section leaves)
-      const progress = Math.max(
-        0,
-        Math.min(1, (scrollY - sectionTop) / (sectionH - viewH))
+    const observers = itemRefs.current.map((el, idx) => {
+      if (!el) return null;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveIndex(idx);
+        },
+        { threshold: 0.5 }
       );
-      const idx = Math.min(
-        items.length - 1,
-        Math.floor(progress * items.length)
-      );
-      setActiveIndex(idx);
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // run once on mount
-    return () => window.removeEventListener('scroll', onScroll);
+      obs.observe(el);
+      return obs;
+    });
+    return () => observers.forEach((o) => o && o.disconnect());
   }, []);
 
   return (
     <div
       ref={sectionRef}
-      className="safetySection-wrapper w-full flex flex-col items-center"
-      // Extra height on desktop creates the scroll travel that drives the sticky effect
-      style={{ minHeight: 'var(--safety-scroll-height, auto)' }}
+      className="safetySection-wrapper w-full flex flex-col items-center relative"
     >
-      <style>{`
-        @media (min-width: 1024px) {
-          .safetySection-wrapper {
-            --safety-scroll-height: calc(950px + ${items.length} * 200px);
-            min-height: var(--safety-scroll-height);
-          }
-          .safetySection-sticky {
-            position: sticky;
-            top: 0;
-          }
-        }
-      `}</style>
-
       <div
         ref={stickyRef}
-        className="safetySection-sticky w-full flex flex-col items-center pb-12 pt-12 laptop:pt-36"
+        className="w-full flex flex-col items-center pb-12 pt-12 laptop:pt-24"
       >
         <div className="safetyContainer px-4 laptop:px-[58px] w-full max-w-[1440px] flex flex-col h-auto min-h-[950px] laptop:h-[950px] laptop:min-h-[850px] gap-10 tablet:gap-14 laptop:gap-14">
           {/* Header */}
@@ -140,7 +90,7 @@ export default function SafetySection() {
               <div className="contentRow flex flex-col tablet:flex-row laptop:flex-row h-full w-full shrink-0 gap-6 tablet:gap-4 laptop:gap-4 justify-between">
 
                 {/* Left: Phone image */}
-                <div className="assetContainer relative h-[80%] tablet:h-full laptop:h-full w-full max-w-full tablet:max-w-[550px] laptop:max-w-[550px] flex">
+                <div className="assetContainer relative h-[350px] tablet:h-[550px] laptop:h-[650px] w-full max-w-full tablet:max-w-[550px] laptop:max-w-[550px] flex laptop:sticky laptop:top-[120px]">
                   {items.map((item, idx) => (
                     <img
                       key={item.id}
@@ -172,7 +122,7 @@ export default function SafetySection() {
                         <div
                           key={item.id}
                           ref={(el) => (itemRefs.current[idx] = el)}
-                          className="accordionItem flex flex-col gap-2"
+                          className="accordionItem flex flex-col gap-2 laptop:min-h-[50vh] laptop:justify-center"
                           onClick={() => setActiveIndex(idx)}
                           style={{ cursor: 'pointer' }}
                         >
@@ -223,7 +173,7 @@ export default function SafetySection() {
 
                               {/* Accordion body */}
                               <div
-                                className="accordionContent overflow-hidden"
+                                className="accordionContent overflow-hidden laptop:!max-h-[500px] laptop:!h-auto"
                                 style={{
                                   height: isActive ? 'auto' : '0px',
                                   maxHeight: isActive ? '200px' : '0px',
@@ -231,7 +181,14 @@ export default function SafetySection() {
                                 }}
                               >
                                 <div className="contentInner">
-                                  <p className="font-feeld-light text-[16px] tablet:text-[18px] laptop:text-[18px] font-light leading-[150%] text-secondary-onSurface pt-2 tablet:pt-2 laptop:pt-2">
+                                  <p 
+                                    className="font-feeld-light text-[16px] tablet:text-[18px] laptop:text-[18px] font-light leading-[150%] pt-2 tablet:pt-2 laptop:pt-2"
+                                    style={{
+                                      opacity: isActive ? 1 : 0.4,
+                                      color: isActive ? 'rgb(255, 255, 255)' : 'rgb(151, 151, 151)',
+                                      transition: 'opacity 0.4s ease, color 0.4s ease',
+                                    }}
+                                  >
                                     {item.body}
                                   </p>
                                 </div>
