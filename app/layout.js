@@ -16,10 +16,9 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicons/favicon.ico' },
-      { url: '/favicons/favicon.png', type: 'image/png' },
+      { url: '/favicons/favicon-v2.png', type: 'image/png' },
     ],
-    apple: '/favicons/apple-touch-icon.png',
+    apple: '/favicons/favicon-v2.png',
   },
 };
 
