@@ -55,13 +55,14 @@ export default function Footer() {
             {"Get Connected"}
           </h3>
           <div className="flex lg:flex-col">
-            <button className="group text-md font-normal rounded-full w-fit mr-2 lg:mb-2 m-0 border hover:transition-all duration-300 before:bg-play border-black bg-primary-white text-primary-black hover:border-white hover:text-primary-white hover:bg-dark-bg" title={footerContent.storePills.appStoreLabel}>
-              <a href={footerContent.socials.telegram} target="_blank" className="before:bg-apple-dark group-hover:before:bg-apple-light before:w-[20px] before:h-[20px] before:bg-no-repeat before:bg-center before:mr-1 flex items-center py-3 px-4 block text-base font-normal leading-normal">
+            <button className="group text-md font-normal rounded-full w-fit mr-2 lg:mb-2 m-0 border hover:transition-all duration-300 border-black bg-primary-white text-primary-black hover:border-white hover:text-primary-white hover:bg-dark-bg" title={footerContent.storePills.appStoreLabel}>
+              <a href={footerContent.socials.telegram} target="_blank" className="flex items-center py-3 px-4 text-base font-normal leading-normal gap-2">
                 {footerContent.storePills.appStoreLabel}
               </a>
             </button>
-            <button className="group text-md font-normal rounded-full w-fit border hover:transition-all duration-300 before:bg-play border-black bg-primary-white text-primary-black hover:border-white hover:text-primary-white hover:bg-dark-bg" title={footerContent.storePills.googlePlayLabel}>
-              <a href={footerContent.socials.x} target="_blank" className="before:bg-google-play-dark group-hover:before:bg-google-play-light before:w-[20px] before:h-[20px] before:bg-no-repeat before:bg-center before:mr-1 flex items-center py-3 px-4 block text-base font-normal leading-normal">
+            <button className="group text-md font-normal rounded-full w-fit border hover:transition-all duration-300 border-black bg-primary-white text-primary-black hover:border-white hover:text-primary-white hover:bg-dark-bg" title={footerContent.storePills.googlePlayLabel}>
+              <a href={footerContent.socials.luma} target="_blank" className="flex items-center py-3 px-4 text-base font-normal leading-normal gap-2">
+                <svg className="w-[20px] h-[20px]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 133 134"><path fill="currentColor" d="M133 67C96.282 67 66.5 36.994 66.5 0c0 36.994-29.782 67-66.5 67 36.718 0 66.5 30.006 66.5 67 0-36.994 29.782-67 66.5-67"></path></svg>
                 {footerContent.storePills.googlePlayLabel}
               </a>
             </button>

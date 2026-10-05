@@ -123,18 +123,10 @@ export const footerContent = {
   newsletterButton: "Join early",
   columns: [
     {
-      title: "Product",
-      links: [
-        { label: "The Experience", href: "#" }, // TODO: add real link
-        { label: "Telegram Circle", href: "#" }, // TODO: add real link
-        { label: "TOKEN2049", href: "#" }, // TODO: add real link
-      ]
-    },
-    {
       title: "About",
       links: [
-        { label: "About TokenMingle", href: "#" }, // TODO: add real link
-        { label: "Singapore", href: "#" }, // TODO: add real link
+        { label: "The Experience", href: "#" }, // TODO: add real link
+        { label: "TOKEN2049", href: "#" }, // TODO: add real link
       ]
     },
     {
@@ -142,25 +134,16 @@ export const footerContent = {
       links: [
         { label: "X", href: "https://x.com/TokenMngle" },
         { label: "Telegram", href: TELEGRAM_URL },
-        { label: "#TOKEN2049", href: "#" }, // TODO: add real link
-      ]
-    },
-    {
-      title: "Discover",
-      links: [
-        { label: "Coffee", href: "#" }, // TODO: add real link
-        { label: "Dinners", href: "#" }, // TODO: add real link
-        { label: "Side Events", href: "#" }, // TODO: add real link
-        { label: "Parties", href: "#" }, // TODO: add real link
       ]
     }
   ],
   storePills: {
     appStoreLabel: "Join Telegram",
-    googlePlayLabel: "Follow on X"
+    googlePlayLabel: "Register on Luma"
   },
   socials: {
     x: "https://x.com/TokenMngle",
-    telegram: TELEGRAM_URL
+    telegram: TELEGRAM_URL,
+    luma: "https://luma.com/event/evt-h1pliwiKCfI15xJ"
   }
 };
