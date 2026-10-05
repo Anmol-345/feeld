@@ -1,3 +1,7 @@
+import FeaturesTabs from './FeaturesTabs';
+import SafetySection from './SafetySection';
+import { heroContent, exploreContent, eventsContent, TELEGRAM_URL } from '../app/content';
+
 export default function MainContent() {
   return (
     <div className="theme-change flex flex-col items-center bg-homepage-bg text-homepage-text" style={{ paddingTop: "88px" }}>
@@ -10,34 +14,30 @@ export default function MainContent() {
                 <div className="titleContainer flex flex-col">
                   <div className="w-full pb-1 tablet:pb-6 laptop:pb-6  titleItem1" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", filter: "none", transform: "translate(0px, 0px)" }}>
                     <h1 className="font-extralight tablet:font-light laptop:font-light text-center tablet:text-left laptop:text-left text-[#EDEDED] text-[48px] tablet:text-[111px] laptop:text-[111px] h-[48px] tablet:h-[111px] laptop:h-[111px] tracking-[-0.01em] tablet:tracking-[-1%] laptop:tracking-[-1%]">
-                      {"A dating app"}
+                      {heroContent.headlineLines[0]}
                     </h1>
                   </div>
                   <div className="w-full pb-1 tablet:pb-6 laptop:pb-6 flex justify-center titleItem2" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", filter: "none", transform: "translate(0px, 0px)" }}>
                     <h2 className="font-extralight tablet:font-light laptop:font-light text-center tablet:text-left laptop:text-left text-[#EDEDED] text-[48px] tablet:text-[111px] laptop:text-[111px] h-[48px] tablet:h-[111px] laptop:h-[111px] tracking-[-0.01em] tablet:tracking-[-1%] laptop:tracking-[-1%]">
-                      {"for the"}
+                      {heroContent.headlineLines[1]}
                     </h2>
                   </div>
                   <div className="w-full h-[48px] tablet:h-[111px] laptop:h-[111px] overflow-visible relative inline-block feeld-edge-bold">
                     <div id="word-1" className="normal-case font-feeld-edge-bold font-normal text-center tablet:text-left laptop:text-left text-[#EDEDED] text-[48px] tablet:text-[111px] laptop:text-[111px] h-[48px] tablet:h-[111px] laptop:h-[111px] absolute left-0 tablet:top-[-11px] laptop:top-[-11px] w-full flex justify-center tablet:justify-end laptop:justify-end align-middle tracking-[-1%] opacity-100" style={{ translate: "none", rotate: "none", scale: "none", opacity: "0", transform: "translate(0%, -100%)", filter: "blur(8px)" }}>
-                      {"throuples"}
+                      {heroContent.rotatingWords[0]}
                     </div>
                     <div id="word-2" className="normal-case font-feeld-edge-bold font-normal text-center tablet:text-left laptop:text-left text-[#EDEDED] text-[48px] tablet:text-[111px] laptop:text-[111px] h-[48px] tablet:h-[111px] laptop:h-[111px] absolute left-0 tablet:top-[-11px] laptop:top-[-11px] w-full flex justify-center tablet:justify-end laptop:justify-end align-middle tracking-[-1%]" style={{ translate: "none", rotate: "none", scale: "none", filter: "blur(0px)", opacity: "1", transform: "translate(0px, 0px)" }}>
-                      {"throuples"}
+                      {heroContent.rotatingWords[0]}
                     </div>
                   </div>
                 </div>
                 <div className="subTitleContainer flex flex-col-reverse gap-10 lg:gap-0 tablet:flex-row laptop:flex-row w-full justify-between">
                   <div className="leftSubSection items-center tablet:items-start laptop:items-start basis-full grow-0 shrink flex flex-col gap-5 justify-center" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", filter: "none", transform: "translate(0px, 0px)", display: "flex" }}>
                     <div className="flex flex-row">
-                      <a className="flex flex-row items-center" href={"https://feeld.onelink.me/TRZt?af_js_web=true&af_ss_ver=2_10_0&pid=Website&c=Homepage&af_channel=Website&deep_link_value=download&af_sub3=/&af_sub4=b6de2e1e-aae8-481e-8d1d-c580e89786e4&af_siteid=Website&af_ss_ui=true&af_ss_gtm_ui=true&af_sub_siteid=homepage-hero-avatars"}>
+                      <a className="flex flex-row items-center" href={TELEGRAM_URL}>
                         <img alt="Group of avatar pictures" loading="lazy" width="107" height="34" decoding="async" data-nimg="1" className="mr-4" src="/assets/image/upload/v1771597449/AvatarsGroup_qmdamq.png" style={{ color: "transparent" }} />
                         <span className="mr-1 text-base font-normal leading-[140%] text-primary-white font-feeld">
-                          {"Join a community of"}
-                        </span>
-                        {" "}
-                        <span className="text-base font-normal font-medium leading-6 text-secondary-yellow font-feeld">
-                          {"14M+"}
+                          {heroContent.avatarLabel}
                         </span>
                       </a>
                       <span>
@@ -54,14 +54,17 @@ export default function MainContent() {
                   </div>
                   <div className="rightSubSection items-center basis-full grow-0 shrink flex flex-col tablet:items-end laptop:items-end" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", filter: "none", transform: "translate(0px, 0px)", display: "flex" }}>
                     <button className="text-md font-normal rounded-full w-fit border hover:transition-all duration-300 border-black text-primary-black hover:border-white border-none my-0 py-4 px-7 bg-primary-white hover:bg-primary-white cta-hover-shadow-white hover:transform=[scale(1.1)] hover:text-primary-black">
-                      <a id="home-hero-cta" className="font-feeld text-[18px] font-normal leading-normal after:bg-arrow-left-light after:rotate-180 after:inline-block after:bg-center after:bg-no-repeat flex items-center after:ml-2 after:w-[18px] after:h-[18px] group-hover:text-[#090516] px-0 py-0" href="https://feeld.co/download">
-                        {"Start exploring for free"}
+                      <a id="home-hero-cta" className="font-feeld text-[18px] font-normal leading-normal flex items-center px-0 py-0" href={TELEGRAM_URL}>
+                        <div className="flex flex-col items-center">
+                          <span className="text-xs text-gray-500 mb-1">{heroContent.smallLineAboveCta}</span>
+                          <span className="after:bg-arrow-left-light after:rotate-180 after:inline-block after:bg-center after:bg-no-repeat flex items-center after:ml-2 after:w-[18px] after:h-[18px] group-hover:text-[#090516]">{heroContent.ctaText}</span>
+                        </div>
                       </a>
                     </button>
                   </div>
                 </div>
                 <div className=" tablet:hidden laptop:hidden flex justify-center  place-self-center">
-                  <button id="mobile-pause-button" className="play-button h-[50px] w-[50px] self-center bg-no-repeat bg-pause" title="Get Feeld" />
+                  <button id="mobile-pause-button" className="play-button h-[50px] w-[50px] self-center bg-no-repeat bg-pause" title="Get TokenMingle" />
                 </div>
               </div>
             </div>
@@ -75,7 +78,7 @@ export default function MainContent() {
           </video>
         </div>
       </div>
-      <button className="hidden tablet:block laptop:block tablet:play-button laptop:play-button absolute h-[50px] w-[50px] bottom-[20px] right-[calc(50%-25px)] tablet:bottom-[35px] tablet:right-[30px] laptop:bottom-[35px] laptop:right-[30px] bg-no-repeat bg-pause" title="Get Feeld" />
+      <button className="hidden tablet:block laptop:block tablet:play-button laptop:play-button absolute h-[50px] w-[50px] bottom-[20px] right-[calc(50%-25px)] tablet:bottom-[35px] tablet:right-[30px] laptop:bottom-[35px] laptop:right-[30px] bg-no-repeat bg-pause" title="Get TokenMingle" />
     </div>
     <section className="flex flex-col items-center w-full relative h-min overflow-clip pb-20 pt-28">
       <div className="scale-up-container container flex flex-col items-center w-full p-0 relative gap-6 tablet:gap-14 laptop:gap-14 max-w-5xl h-min overflow-visible">
@@ -83,7 +86,7 @@ export default function MainContent() {
           <div className="headerLine flex flex-row gap-1 tablet:gap-2 laptop:gap-2 w-full justify-center">
             <div className="textContainer">
               <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.5px] leading-[100%] ">
-                {"Explore"}
+                {exploreContent.headingLines[0]}
               </h2>
             </div>
             <div className="iconContainer w-10 h-full flex m-0 tablet:my-auto laptop:my-auto justify-center relative" style={{ translate: "none", rotate: "none", scale: "none", filter: "blur(0px)", opacity: "1", transform: "translate(0px, 0px)" }}>
@@ -96,26 +99,14 @@ export default function MainContent() {
             </div>
             <div className="textContainer">
               <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.5px] leading-[100%] ">
-                {"your desires in a"}
+                {exploreContent.headingLines[1]}
               </h2>
             </div>
           </div>
           <div className="headerLine flex flex-row gap-1 tablet:gap-2 laptop:gap-2 w-full justify-center">
             <div className="textContainer">
               <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.5px] leading-[100%] ">
-                {"judgement-free"}
-              </h2>
-            </div>
-            <div className="iconContainer w-10 h-full flex m-0 tablet:my-auto laptop:my-auto justify-center relative" style={{ translate: "none", rotate: "none", scale: "none", filter: "blur(0px)", opacity: "1", transform: "translate(0px, 0px)" }}>
-              <div className="svgContainer w-[30px] h-[30px] flex items-center justify-center">
-                <svg className="text-secondary-highlight w-[24px] h-[24px] tablet:w-[32px] tablet:h-[32px] laptop:w-[32px] laptop:h-[32px]" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M7.84921 0C3.51421 0 0 3.51421 0 7.84921C0 9.33916 0.415407 10.7329 1.13684 11.92C1.14477 11.9509 1.15807 11.981 1.177 12.009L13.7498 30.5556H16.8058L29.3786 12.0089C29.3975 11.981 29.4108 11.9509 29.4187 11.92C30.1402 10.7329 30.5556 9.33916 30.5556 7.84921C30.5556 3.51421 27.0413 0 22.7064 0C19.9558 0 17.5359 1.41499 16.1346 3.55546C16.0971 3.61275 16.0064 3.68337 15.8411 3.73934C15.6816 3.79334 15.4831 3.82295 15.2778 3.82295C15.0725 3.82295 14.874 3.79334 14.7145 3.73934C14.5492 3.68337 14.4584 3.61275 14.4209 3.55546C13.0197 1.41499 10.5997 0 7.84921 0ZM2.84127 7.84921C2.84127 5.0834 5.0834 2.84127 7.84921 2.84127C10.449 2.84127 12.6287 5.08261 13.2071 7.48563L13.2583 7.69841H17.2973L17.3485 7.48563C17.9269 5.08261 20.1065 2.84127 22.7064 2.84127C25.4722 2.84127 27.7143 5.0834 27.7143 7.84921C27.7143 8.46162 27.5123 9.09659 27.2037 9.7389C26.8952 10.381 26.4911 11.0089 26.1032 11.6112L26.0442 11.7027C24.9142 13.4583 24.7897 13.6455 24.4675 14.13C24.2388 14.4739 23.9104 14.9677 23.0606 16.2652L16.9106 25.3373C16.4486 26.026 15.8481 26.3393 15.2778 26.3393C14.7075 26.3393 14.1062 26.0249 13.6442 25.3362L7.49491 16.2652C6.64497 14.9674 6.31595 14.4727 6.08729 14.1288C5.76495 13.6441 5.64157 13.4586 4.51135 11.7027L4.45238 11.6112C4.06444 11.0089 3.6604 10.381 3.35189 9.7389C3.04328 9.09659 2.84127 8.46162 2.84127 7.84921Z" fill="currentColor" />
-                </svg>
-              </div>
-            </div>
-            <div className="textContainer">
-              <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.5px] leading-[100%] ">
-                {"place"}
+                {exploreContent.headingLines[2]}
               </h2>
             </div>
           </div>
@@ -137,547 +128,87 @@ export default function MainContent() {
             <div className="rightMask mask-gradient absolute w-full h-full top-0 right-0 opacity-100 max-w-[100px] tablet:max-w-[200px] laptop:max-w-[200px] z-[1]" style={{ "--gradient-side": "90deg", "--gradient-color-rgb": "9,5,22" }} />
             <div className="leftMask mask-gradient absolute w-full h-full top-0 left-0 opacity-100 max-w-[100px] tablet:max-w-[200px] laptop:max-w-[200px] z-[1]" style={{ "--gradient-side": "270deg", "--gradient-color-rgb": "9,5,22" }} />
           </div>
-          <div data-direction="left" className="tagLineContainer flex flex-row items-center gap-2 tablet:gap-4 laptop:gap-4 h-9 tablet:h-14 laptop:h-14 relative z-1 overflow-visible" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)" }}>
+                    <div data-direction="left" className="tagLineContainer flex flex-row items-center gap-2 tablet:gap-4 laptop:gap-4 h-9 tablet:h-14 laptop:h-14 relative z-1 overflow-visible" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)" }}>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Kink"}
+                { "Coffee" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Monogamy"}
+                { "Networking" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"GGG"}
+                { "Dinners" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Kissing"}
+                { "Side Events" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Sensual"}
+                { "Parties" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Toys"}
+                { "+1" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Tattoos"}
+                { "IRL" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Music"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"ENM"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Dancing"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Communication"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Edging"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Celibate"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Roleplay"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Kink"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Monogamy"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"GGG"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Kissing"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Sensual"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Toys"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Tattoos"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Music"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"ENM"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Dancing"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Communication"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Edging"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Celibate"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Roleplay"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Kink"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Monogamy"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"GGG"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Kissing"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Sensual"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Toys"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Tattoos"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Music"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"ENM"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Dancing"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Communication"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Edging"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Celibate"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Roleplay"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Kink"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Monogamy"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"GGG"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Kissing"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Sensual"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Toys"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Tattoos"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Music"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"ENM"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Dancing"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Communication"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Edging"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Celibate"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Roleplay"}
+                { "Singapore" }
               </div>
             </div>
           </div>
           <div data-direction="right" className="tagLineContainer flex flex-row items-center gap-2 tablet:gap-4 laptop:gap-4 h-9 tablet:h-14 laptop:h-14 relative z-1 overflow-visible" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)" }}>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Rough"}
+                { "TOKEN2049" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Role play"}
+                { "Web3" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Watching"}
+                { "Crypto Events" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Dates"}
+                { "Private Gatherings" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"FWB"}
+                { "After Dark" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Friendships"}
+                { "Skyline" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Cuddling"}
+                { "Day to Night" }
               </div>
             </div>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Sensual"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Massage"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Wine"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Intimacy"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Being a brat"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Couples"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Rough"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Role play"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Watching"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Dates"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"FWB"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Friendships"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Cuddling"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Sensual"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Massage"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Wine"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Intimacy"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Being a brat"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Couples"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Rough"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Role play"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Watching"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Dates"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"FWB"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Friendships"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Cuddling"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Sensual"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Massage"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Wine"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Intimacy"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Being a brat"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Couples"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Rough"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Role play"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Watching"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Dates"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"FWB"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Friendships"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Cuddling"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Sensual"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Massage"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Wine"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Intimacy"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Being a brat"}
-              </div>
-            </div>
-            <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
-              <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
-                {"Couples"}
+                { "Telegram Circle" }
               </div>
             </div>
           </div>
@@ -690,7 +221,7 @@ export default function MainContent() {
           <div className="headerLine flex flex-row gap-1 tablet:gap-2 laptop:gap-2 w-full justify-center">
             <div className="textContainer">
               <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.5px] leading-[100%] ">
-                {"Join a community"}
+                {"Join"}
               </h2>
             </div>
             <div className="iconContainer w-10 h-full flex m-0 tablet:my-auto laptop:my-auto justify-center relative" style={{ translate: "none", rotate: "none", scale: "none", filter: "blur(0px)", opacity: "1", transform: "translate(0px, 0px)" }}>
@@ -709,12 +240,12 @@ export default function MainContent() {
           <div className="headerLine flex flex-row gap-1 tablet:gap-2 laptop:gap-2 w-full justify-center">
             <div className="textContainer">
               <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.5px] leading-[100%] text-secondary-yellow">
-                {"14M"}
+                {"25,000+"}
               </h2>
             </div>
             <div className="textContainer">
               <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.5px] leading-[100%] ">
-                {"open-minded"}
+                {"crypto"}
               </h2>
             </div>
             <div className="iconContainer w-10 h-full flex m-0 tablet:my-auto laptop:my-auto justify-center relative" style={{ translate: "none", rotate: "none", scale: "none", filter: "blur(0px)", opacity: "1", transform: "translate(0px, 0px)" }}>
@@ -843,7 +374,7 @@ export default function MainContent() {
                           </svg>
                         </div>
                         <div className="textContainer">
-                          {"Queer"}
+                          {"Designer"}
                         </div>
                       </div>
                     </div>
@@ -904,7 +435,7 @@ export default function MainContent() {
                           </svg>
                         </div>
                         <div className="textContainer">
-                          {"Queer"}
+                          {"Designer"}
                         </div>
                       </div>
                     </div>
@@ -1076,7 +607,7 @@ export default function MainContent() {
                           </svg>
                         </div>
                         <div className="textContainer">
-                          {"Demisexual"}
+                          {"Developer"}
                         </div>
                       </div>
                     </div>
@@ -1137,7 +668,7 @@ export default function MainContent() {
                           </svg>
                         </div>
                         <div className="textContainer">
-                          {"Bisexual"}
+                          {"Founder"}
                         </div>
                       </div>
                     </div>
@@ -1248,7 +779,7 @@ export default function MainContent() {
                           </svg>
                         </div>
                         <div className="textContainer">
-                          {"Pansexual"}
+                          {"Investor"}
                         </div>
                       </div>
                     </div>
@@ -1276,7 +807,7 @@ export default function MainContent() {
                       <div className="topRow flex flex-row gap-[2px] items-center">
                         <div className="name mr-1">
                           <h5 className="font-feeld-edge text-[20px] tablet:text-2xl laptop:text-2xl font-extralight leading-[120%] tracking-[-0.24px]">
-                            {"Geo"}
+                            {"Team"}
                           </h5>
                         </div>
                         <div className="iconContainer w-[16px] h-[16px] tablet:w-6 tablet:h-6 laptop:w-6 laptop:h-6 flex items-center justify-center">
@@ -1303,7 +834,7 @@ export default function MainContent() {
                           </svg>
                         </div>
                         <div className="textContainer">
-                          {"Queer"}
+                          {"Designer"}
                         </div>
                       </div>
                     </div>
@@ -1344,7 +875,7 @@ export default function MainContent() {
                 </li>
                 <li className="tagItemContainer" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(4794.28%, 0%) translate3d(0px, 0px, 0px)" }}>
                   <div className="textContainer h-min overflow-clip flex flex-row items-center w-min p-0 relative opacity-60 whitespace-pre text-nowrap text-[14px] tablet:text-[18px] laptop:text-[18px] font-feeld font-normal tracking-[0.18px] text-secondary-onSurface leading-[normal]">
-                    {"Dating"}
+                    {"Networking"}
                   </div>
                 </li>
                 <li className="tagItemContainer" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(1636.48%, 0%) translate3d(0px, 0px, 0px)" }}>
@@ -1369,7 +900,7 @@ export default function MainContent() {
                 </li>
                 <li className="tagItemContainer" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(-683.998%, 0%) translate3d(0px, 0px, 0px)" }}>
                   <div className="textContainer h-min overflow-clip flex flex-row items-center w-min p-0 relative opacity-60 whitespace-pre text-nowrap text-[14px] tablet:text-[18px] laptop:text-[18px] font-feeld font-normal tracking-[0.18px] text-secondary-onSurface leading-[normal]">
-                    {"Kinks and desires"}
+                    {"Startups and scaleups"}
                   </div>
                 </li>
                 <li className="tagItemContainer" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(-569.373%, 0%) translate3d(0px, 0px, 0px)" }}>
@@ -1417,275 +948,7 @@ export default function MainContent() {
           </div>
         </div>
       </section>
-    </div>
-    <section className="featuresSection w-full flex flex-col items-center pt-12 pb-12 tablet:pb-24 laptop:pb-24">
-      <div className="featuresContainer px-4 laptop:px-[58px] w-full max-w-[1440px] min-h-[650px]">
-        <div className="header">
-          <div className="headerContainer pb-4">
-            <div className="header">
-              <h5 className="font-feeld-edge text-[18px] tablet:text-[24px] laptop:text-[24px] font-extralight leading-[120%] tracking-[-0.24px] text-secondary-lightGray">
-                {"Explore our features"}
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div className="features">
-          <div className="tabsContainer">
-            <div className="tabsContentContainer flex flex-col gap-5 tablet:gap-9 laptop:gap-9">
-              <div className="relative">
-                <div className="tabs flex flex-row overflow-hidden ">
-                  <div id="tab-interests" className="tabContainer flex-1">
-                    <button type="button" className="tab py-4 cursor-pointer px-8 laptop:px-5 group w-full border-solid border-[#2B263A] border-b" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
-                      <div className="textContainer flex items-center justify-center whitespace-nowrap font-feeld text-[14px] laptop:text-[16px] font-normal leading-[150%] text-secondary-onSurface group-hover:text-primary-white">
-                        {"Interests"}
-                      </div>
-                      <div className="active-border absolute bottom-0 left-0 w-full h-[1px] scale-x-0" id="interests" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate3d(0px, 0px, 0px) scale(0.5994, 1)", backgroundColor: "rgb(216, 119, 234)", transformOrigin: "0% 50%" }} />
-                    </button>
-                  </div>
-                  <div id="tab-desire tags" className="tabContainer flex-1">
-                    <button type="button" className="tab py-4 cursor-pointer px-8 laptop:px-5 group w-full border-solid border-[#2B263A] border-b" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
-                      <div className="textContainer flex items-center justify-center whitespace-nowrap font-feeld text-[14px] laptop:text-[16px] font-normal leading-[150%] text-secondary-onSurfaceTertiary group-hover:text-primary-white">
-                        {"Desire tags"}
-                      </div>
-                      <div className="active-border absolute bottom-0 left-0 w-full h-[1px] scale-x-0" id="desire tags" style={{ translate: "none", rotate: "none", scale: "none", transform: "scale(0, 1)" }} />
-                    </button>
-                  </div>
-                  <div id="tab-longform bios" className="tabContainer flex-1">
-                    <button type="button" className="tab py-4 cursor-pointer px-8 laptop:px-5 group w-full border-solid border-[#2B263A] border-b" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
-                      <div className="textContainer flex items-center justify-center whitespace-nowrap font-feeld text-[14px] laptop:text-[16px] font-normal leading-[150%] text-secondary-onSurfaceTertiary group-hover:text-primary-white">
-                        {"Longform bios"}
-                      </div>
-                      <div className="active-border absolute bottom-0 left-0 w-full h-[1px] scale-x-0" id="longform bios" style={{ translate: "none", rotate: "none", scale: "none", transform: "scale(0, 1)" }} />
-                    </button>
-                  </div>
-                  <div id="tab-always ad-free" className="tabContainer flex-1">
-                    <button type="button" className="tab py-4 cursor-pointer px-8 laptop:px-5 group w-full border-solid border-[#2B263A] border-b" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
-                      <div className="textContainer flex items-center justify-center whitespace-nowrap font-feeld text-[14px] laptop:text-[16px] font-normal leading-[150%] text-secondary-onSurfaceTertiary group-hover:text-primary-white">
-                        {"Always ad-free"}
-                      </div>
-                      <div className="active-border absolute bottom-0 left-0 w-full h-[1px] scale-x-0" id="always ad-free" style={{ translate: "none", rotate: "none", scale: "none", transform: "scale(0, 1)" }} />
-                    </button>
-                  </div>
-                  <div id="tab-hidden bios" className="tabContainer flex-1">
-                    <button type="button" className="tab py-4 cursor-pointer px-8 laptop:px-5 group w-full border-solid border-[#2B263A] border-b" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
-                      <div className="textContainer flex items-center justify-center whitespace-nowrap font-feeld text-[14px] laptop:text-[16px] font-normal leading-[150%] text-secondary-onSurfaceTertiary group-hover:text-primary-white">
-                        {"Hidden bios"}
-                      </div>
-                      <div className="active-border absolute bottom-0 left-0 w-full h-[1px] scale-x-0" id="hidden bios" style={{ translate: "none", rotate: "none", scale: "none", transform: "scale(0, 1)" }} />
-                    </button>
-                  </div>
-                </div>
-                <div className="scrim absolute top-0 right-0 w-[32px] h-full bg-[linear-gradient(90deg,_rgba(9,_5,_22,_0.00)_5.49%,_#090516_100%)] laptop:hidden" />
-              </div>
-              <div className="contentContainer flex w-full relative h-auto min-h-[420px] tablet:min-h-[420px] laptop:min-h-[420px] laptop:max-h-[520px]">
-                <div className="flex relative w-full">
-                  <div className="featurePanel flex flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 " style={{ opacity: "1", visibility: "visible", display: "flex" }}>
-                    <div className="leftContent flex-1 h-min">
-                      <div className="mediaContainer h-min relative w-full flex m-0">
-                        <video src="/feeld/media/01_Features-Interests_1308x1040_j2rzyz.webm" autoplay muted loop playsInline className="relative object-cover rounded-b-[16px] rounded-tr-[16px] aspect-5/4" preload="none" />
-                      </div>
-                    </div>
-                    <div className="rightContent flex flex-row flex-1 items-start gap-4 h-auto">
-                      <div className="icon w-[48px]">
-                        <div className="iconContainer w-[48px] h-[48px] relative desktop-feature-icon" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)", opacity: "1" }}>
-                          <img alt="Magenta pink icon outline of two circles together" loading="lazy" decoding="async" data-nimg="fill" src="/assets/image/upload/v1779486243/Icon-3_oiwj2x.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                        </div>
-                      </div>
-                      <div className="content flex flex-col items-start justify-between h-full w-[80%]">
-                        <div className="headerContainer desktop-feature-header" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)", opacity: "1" }}>
-                          <div className="header">
-                            <h2 className="font-feeld-edge text-[48px] font-extralight leading-[100%] tracking-[-0.48px] text-primary-grey">
-                              {"Be a whole person"}
-                            </h2>
-                            <h2 className="font-feeld-edge text-[48px] font-extralight leading-[100%] tracking-[-0.48px] text-primary-grey">
-                              {"on your dating profile"}
-                            </h2>
-                          </div>
-                        </div>
-                        <div className="textContent flex flex-col items-start gap-4 w-full">
-                          <div className="textContainer desktop-feature-text" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)", opacity: "1" }}>
-                            <p className="font-feeld-light text-[16px] font-light leading-[150%] text-secondary-onSurface">
-                              {"Your desires are just one part of you. Here, we want to see your whole self. Into sourdough bread? Pottery? Jousting? A community that shares those interests is on Feeld. It’s time you find them."}
-                            </p>
-                          </div>
-                          <div className="ctaContainer desktop-feature-cta w-full" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)", opacity: "1" }}>
-                            <button className="text-md font-normal rounded-full my-4 border hover:transition-all duration-300 border-black hover:border-white w-full bg-primary-white text-primary-black cta-hover-shadow-white hover:transform=[scale(1.1)] hover:text-primary-black hover:bg-primary-white mt-0 mb-0">
-                              <a id="features-cta" className="block font-feeld text-[18px] font-normal leading-normal px-7 py-4" href="/download">
-                                {"Start your journey"}
-                              </a>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="featurePanel flex flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 invisible" style={{ opacity: "0" }}>
-                    <div className="leftContent flex-1 h-min">
-                      <div className="mediaContainer h-min relative w-full flex m-0">
-                        <video src="/feeld/media/02-features-desires.av1_kgytg3.mp4" autoplay muted loop playsInline className="relative object-cover rounded-b-[16px] rounded-tr-[16px] aspect-5/4" preload="none" />
-                      </div>
-                    </div>
-                    <div className="rightContent flex flex-row flex-1 items-start gap-4 h-auto">
-                      <div className="icon w-[48px]">
-                        <div className="iconContainer w-[48px] h-[48px] relative desktop-feature-icon" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                          <img alt="BLue icon outline of a smiling face" loading="lazy" decoding="async" data-nimg="fill" src="/assets/image/upload/v1779486243/Icon-1_rgu6us.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                        </div>
-                      </div>
-                      <div className="content flex flex-col items-start justify-between h-full w-[80%]">
-                        <div className="headerContainer desktop-feature-header" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                          <div className="header">
-                            <h2 className="font-feeld-edge text-[48px] font-extralight leading-[100%] tracking-[-0.48px] text-primary-grey">
-                              {"Openly share"}
-                            </h2>
-                            <h2 className="font-feeld-edge text-[48px] font-extralight leading-[100%] tracking-[-0.48px] text-primary-grey">
-                              {"your desires"}
-                            </h2>
-                          </div>
-                        </div>
-                        <div className="textContent flex flex-col items-start gap-4 w-full">
-                          <div className="textContainer desktop-feature-text" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                            <p className="font-feeld-light text-[16px] font-light leading-[150%] text-secondary-onSurface">
-                              {"Into cuddling—but nothing else? Friendship—but maybe something else? Whether it's bondage, MFMFs, or texting, here, you can explore your desires. And there’s no shame in saying exactly what you want. In fact, it’s sort of expected. What would happen if you asked for your deepest desire? You just may get it."}
-                            </p>
-                          </div>
-                          <div className="ctaContainer desktop-feature-cta w-full" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                            <button className="text-md font-normal rounded-full my-4 border hover:transition-all duration-300 border-black hover:border-white w-full bg-primary-white text-primary-black cta-hover-shadow-white hover:transform=[scale(1.1)] hover:text-primary-black hover:bg-primary-white mt-0 mb-0">
-                              <a id="features-cta" className="block font-feeld text-[18px] font-normal leading-normal px-7 py-4" href="/download">
-                                {"Start your journey"}
-                              </a>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="featurePanel flex flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 invisible" style={{ opacity: "0" }}>
-                    <div className="leftContent flex-1 h-min">
-                      <div className="mediaContainer h-min relative w-full flex m-0">
-                        <video src="/feeld/media/03-features-long-bios.av1_fprh7y.mp4" autoplay muted loop playsInline className="relative object-cover rounded-b-[16px] rounded-tr-[16px] aspect-5/4" preload="none" />
-                      </div>
-                    </div>
-                    <div className="rightContent flex flex-row flex-1 items-start gap-4 h-auto">
-                      <div className="icon w-[48px]">
-                        <div className="iconContainer w-[48px] h-[48px] relative desktop-feature-icon" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                          <img alt="Green icon outline of a pencil" loading="lazy" decoding="async" data-nimg="fill" src="/assets/image/upload/v1779486243/Icon-4_mcs9d5.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                        </div>
-                      </div>
-                      <div className="content flex flex-col items-start justify-between h-full w-[80%]">
-                        <div className="headerContainer desktop-feature-header" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                          <div className="header">
-                            <h2 className="font-feeld-edge text-[48px] font-extralight leading-[100%] tracking-[-0.48px] text-primary-grey">
-                              {"Express yourself"}
-                            </h2>
-                            <h2 className="font-feeld-edge text-[48px] font-extralight leading-[100%] tracking-[-0.48px] text-primary-grey">
-                              {"freely"}
-                            </h2>
-                          </div>
-                        </div>
-                        <div className="textContent flex flex-col items-start gap-4 w-full">
-                          <div className="textContainer desktop-feature-text" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                            <p className="font-feeld-light text-[16px] font-light leading-[150%] text-secondary-onSurface">
-                              {"Relationships require good communication—and that starts in your bio. With a generous character count, you have the space to write a full essay (if you wish) about who you are and what you’re looking for."}
-                            </p>
-                          </div>
-                          <div className="ctaContainer desktop-feature-cta w-full" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                            <button className="text-md font-normal rounded-full my-4 border hover:transition-all duration-300 border-black hover:border-white w-full bg-primary-white text-primary-black cta-hover-shadow-white hover:transform=[scale(1.1)] hover:text-primary-black hover:bg-primary-white mt-0 mb-0">
-                              <a id="features-cta" className="block font-feeld text-[18px] font-normal leading-normal px-7 py-4" href="/download">
-                                {"Start your journey"}
-                              </a>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="featurePanel flex flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 invisible" style={{ opacity: "0" }}>
-                    <div className="leftContent flex-1 h-min">
-                      <div className="mediaContainer h-min relative w-full flex m-0">
-                        <video src="/feeld/media/04-features-images.av1_rqkehn.mp4" autoplay muted loop playsInline className="relative object-cover rounded-b-[16px] rounded-tr-[16px] aspect-5/4" preload="none" />
-                      </div>
-                    </div>
-                    <div className="rightContent flex flex-row flex-1 items-start gap-4 h-auto">
-                      <div className="icon w-[48px]">
-                        <div className="iconContainer w-[48px] h-[48px] relative desktop-feature-icon" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                          <img alt="Red icon outline of a shield" loading="lazy" decoding="async" data-nimg="fill" src="/assets/image/upload/v1779486243/Icon-2_hbciuw.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                        </div>
-                      </div>
-                      <div className="content flex flex-col items-start justify-between h-full w-[80%]">
-                        <div className="headerContainer desktop-feature-header" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                          <div className="header">
-                            <h2 className="font-feeld-edge text-[48px] font-extralight leading-[100%] tracking-[-0.48px] text-primary-grey">
-                              {"No interruption"}
-                            </h2>
-                            <h2 className="font-feeld-edge text-[48px] font-extralight leading-[100%] tracking-[-0.48px] text-primary-grey">
-                              {"from ads"}
-                            </h2>
-                          </div>
-                        </div>
-                        <div className="textContent flex flex-col items-start gap-4 w-full">
-                          <div className="textContainer desktop-feature-text" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                            <p className="font-feeld-light text-[16px] font-light leading-[150%] text-secondary-onSurface">
-                              {"You’re here to find connection—not ads. So you won’t find ads here, whether you pay for Majestic membership or not. Feeld is an independently profitable company, intent on protecting your privacy and opening up space for you to open up."}
-                            </p>
-                          </div>
-                          <div className="ctaContainer desktop-feature-cta w-full" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                            <button className="text-md font-normal rounded-full my-4 border hover:transition-all duration-300 border-black hover:border-white w-full bg-primary-white text-primary-black cta-hover-shadow-white hover:transform=[scale(1.1)] hover:text-primary-black hover:bg-primary-white mt-0 mb-0">
-                              <a id="features-cta" className="block font-feeld text-[18px] font-normal leading-normal px-7 py-4" href="/download">
-                                {"Start your journey"}
-                              </a>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="featurePanel flex flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 invisible" style={{ opacity: "0" }}>
-                    <div className="leftContent flex-1 h-min">
-                      <div className="mediaContainer h-min relative w-full flex m-0">
-                        <video src="/feeld/media/05_Features-Hidden_Bio_1308x1040_mwik5k.webm" autoplay muted loop playsInline className="relative object-cover rounded-b-[16px] rounded-tr-[16px] aspect-5/4" preload="none" />
-                      </div>
-                    </div>
-                    <div className="rightContent flex flex-row flex-1 items-start gap-4 h-auto">
-                      <div className="icon w-[48px]">
-                        <div className="iconContainer w-[48px] h-[48px] relative desktop-feature-icon" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                          <img alt="Yellow icon outline of an eye with a cross through it" loading="lazy" decoding="async" data-nimg="fill" src="/assets/image/upload/v1779486243/Icon_ojv58k.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                        </div>
-                      </div>
-                      <div className="content flex flex-col items-start justify-between h-full w-[80%]">
-                        <div className="headerContainer desktop-feature-header" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                          <div className="header">
-                            <h2 className="font-feeld-edge text-[48px] font-extralight leading-[100%] tracking-[-0.48px] text-primary-grey">
-                              {"Have a public bio—"}
-                            </h2>
-                            <h2 className="font-feeld-edge text-[48px] font-extralight leading-[100%] tracking-[-0.48px] text-primary-grey">
-                              {"and a hidden one"}
-                            </h2>
-                          </div>
-                        </div>
-                        <div className="textContent flex flex-col items-start gap-4 w-full">
-                          <div className="textContainer desktop-feature-text" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                            <p className="font-feeld-light text-[16px] font-light leading-[150%] text-secondary-onSurface">
-                              {"Public bios are for everyone, hidden bios are only for the people you connect with. Use this space to control what you share: whether it be kinks, deepest desires, or dating preferences. Reveal yourself at your own pace."}
-                            </p>
-                          </div>
-                          <div className="ctaContainer desktop-feature-cta w-full" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 80px)", opacity: "0" }}>
-                            <button className="text-md font-normal rounded-full my-4 border hover:transition-all duration-300 border-black hover:border-white w-full bg-primary-white text-primary-black cta-hover-shadow-white hover:transform=[scale(1.1)] hover:text-primary-black hover:bg-primary-white mt-0 mb-0">
-                              <a id="features-cta" className="block font-feeld text-[18px] font-normal leading-normal px-7 py-4" href="/download">
-                                {"Start your journey"}
-                              </a>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      <FeaturesTabs />
     <section className="w-full flex flex-col relative items-center py-12">
       <div className="exploreTogetherContainer w-full min-h-min flex flex-col relative max-w-[1440px] px-4 tablet:px-[58px] laptop:px-[58px]">
         <div className="w-full min-h-min flex flex-col gap-6 laptop:gap-0 laptop:flex-row items-start justify-between">
@@ -1694,14 +957,14 @@ export default function MainContent() {
               <div className="headerLine flex flex-row gap-1 tablet:gap-2 laptop:gap-2 w-full flex-wrap">
                 <div className="textContainer">
                   <h2 className="font-feeld-edge text-[32px] tablet:text-[48px] laptop:text-[48px] font-extralight tracking-[-0.32px] tablet:tracking-[-0.5px] laptop:tracking-[-0.5px] leading-[100%] ">
-                    {"Explore alongside"}
+                    {"Navigate TOKEN2049"}
                   </h2>
                 </div>
               </div>
               <div className="headerLine flex flex-row gap-1 tablet:gap-2 laptop:gap-2 w-full flex-wrap">
                 <div className="textContainer">
                   <h2 className="font-feeld-edge text-[32px] tablet:text-[48px] laptop:text-[48px] font-extralight tracking-[-0.32px] tablet:tracking-[-0.5px] laptop:tracking-[-0.5px] leading-[100%] ">
-                    {"partners, lovers,"}
+                    {"with your team,"}
                   </h2>
                 </div>
               </div>
@@ -1727,7 +990,7 @@ export default function MainContent() {
             </div>
             <button className="text-md font-normal rounded-full w-fit border hover:transition-all duration-300 border-black text-primary-black my-0 bg-prism-twilight_200 hover:border-prism-twilight_200 hover:bg-prism-twilight_200 cta-hover-shadow hover:transform=[scale(1.1)] hover:text-primary-black">
               <a className="block font-feeld text-[18px] font-normal leading-normal px-[28px] py-[18px]" href="/download">
-                {"Explore together"}
+                {"Group up"}
               </a>
             </button>
           </div>
@@ -1740,10 +1003,10 @@ export default function MainContent() {
               </div>
               <div className="textContent flex flex-col gap-4 tablet:gap-6 laptop:gap-6">
                 <h4 className="font-feeld-edge text-[24px] font-extralight leading-[120%] tracking-[-0.2px] tablet:tracking-[-0.24px] laptop:tracking-[-0.24px] text-primary-gray">
-                  {"Date with a partner— the easy way"}
+                  {"Coordinate with your team"}
                 </h4>
                 <p className="font-feeld-light text-[16px] font-light leading-[150%] text-secondary-onSurface">
-                  {"Link profiles with up to 5 other people, and explore solo or together—but always transparently."}
+                  {"Group up with your colleagues or friends and navigate the side events together."}
                 </p>
               </div>
             </div>
@@ -1755,10 +1018,10 @@ export default function MainContent() {
               </div>
               <div className="textContent flex flex-col gap-4 tablet:gap-6 laptop:gap-6">
                 <h4 className="font-feeld-edge text-[24px] font-extralight leading-[120%] tracking-[-0.2px] tablet:tracking-[-0.24px] laptop:tracking-[-0.24px] text-primary-gray">
-                  {"Flirt in the group chat"}
+                  {"Chat before you meet"}
                 </h4>
                 <p className="font-feeld-light text-[16px] font-light leading-[150%] text-secondary-onSurface">
-                  {"All your lovers, all in one place. Chat, flirt and build up the anticipation for IRL meets using group chats. Clear, transparent communication on a dating app—it exists on Feeld."}
+                  {"Coordinate coffee catchups and share event locations seamlessly within the TokenMingle network."}
                 </p>
               </div>
             </div>
@@ -1772,16 +1035,16 @@ export default function MainContent() {
           <div className="contentContainer flex flex-col gap-8 items-center justify-center relative z-[2]">
             <div className="textContainer flex flex-col items-center gap-4 max-w-[400px] text-center">
               <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight leading-[100%] tracking-[-0.4px] tablet:tracking-[-0.56px] laptop:tracking-[-0.56px] text-primary-white">
-                {"Join the Feeld community"}
+                {"Join the TokenMingle circle"}
               </h2>
               <p className="font-feeld text-[16px] font-normal leading-[140%] text-primary-white">
-                {"No experience required."}
+                {"Your ultimate TOKEN2049 companion."}
               </p>
             </div>
             <div className="cta">
               <div className="flex flex-row gap-2">
                 <button type="button" className="group text-md font-normal rounded-full w-fit hover:transition-all duration-300 bg-primary-white text-primary-black cta-hover-shadow hover:transform=[scale(1.1)] hover:text-primary-black" title="App Store" style={{ "--cta-shadow-color": "#fff" }}>
-                  <a id="homepage-mid-cta-block-apple" href={"https://feeld.onelink.me/TRZt?af_js_web=true&af_ss_ver=2_10_0&pid=Website&c=Homepage&af_channel=Website&deep_link_value=download&af_sub3=/&af_sub4=b6de2e1e-aae8-481e-8d1d-c580e89786e4&af_siteid=Website&af_ss_ui=true&af_ss_gtm_ui=true&af_sub_siteid=homepage-mid-cta-block-apple"} className="flex items-center py-3 px-[14px] block">
+                  <a id="homepage-mid-cta-block-apple" href={TELEGRAM_URL} className="flex items-center py-3 px-[14px] block">
                     <span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path fillRule="evenodd" clipRule="evenodd" d="M14.6728 9.01074C15.1615 9.0257 15.6402 9.15131 16.0703 9.37793C16.5003 9.60456 16.87 9.92614 17.1504 10.3164C16.7089 10.5809 16.3437 10.9504 16.0879 11.3896C15.8321 11.8289 15.6942 12.3241 15.6875 12.8291C15.6881 13.3973 15.8603 13.9533 16.1826 14.4268C16.5049 14.9002 16.9631 15.2709 17.5 15.4922C17.2889 16.1605 16.9701 16.7918 16.5566 17.3633C16.0013 18.173 15.4192 18.9639 14.4951 18.9785C13.5974 18.9986 13.2954 18.4639 12.2656 18.4639C11.2262 18.4639 10.9041 18.9642 10.0429 18.999C9.16308 19.0305 8.49042 18.135 7.91501 17.333C6.76479 15.695 5.86969 12.7169 7.07029 10.6904C7.34747 10.2049 7.74866 9.79713 8.23532 9.50781C8.72203 9.21849 9.27786 9.05701 9.84763 9.03906C10.7284 9.02158 11.5464 9.61914 12.0879 9.61914C12.6192 9.61902 13.6303 8.90407 14.6728 9.01074ZM15.4873 5C15.5758 6.00704 15.2096 7.00423 14.4677 7.78027C14.1125 8.16525 13.6619 8.47535 13.1494 8.68652C12.6368 8.8977 12.0757 9.00508 11.5088 9C11.4726 8.51573 11.5462 8.02975 11.7256 7.57031C11.905 7.11085 12.187 6.68685 12.5547 6.32227C13.3066 5.57599 14.3538 5.10373 15.4873 5Z" fill="currentColor" />
@@ -1793,7 +1056,7 @@ export default function MainContent() {
                   </a>
                 </button>
                 <button type="button" className="group text-md font-normal rounded-full w-fit hover:transition-all duration-300 bg-primary-white text-primary-black cta-hover-shadow hover:transform=[scale(1.1)] hover:text-primary-black" title="Google Play" style={{ "--cta-shadow-color": "#fff" }}>
-                  <a id="homepage-mid-cta-block-google" href={"https://feeld.onelink.me/TRZt?af_js_web=true&af_ss_ver=2_10_0&pid=Website&c=Homepage&af_channel=Website&deep_link_value=download&af_sub3=/&af_sub4=b6de2e1e-aae8-481e-8d1d-c580e89786e4&af_siteid=Website&af_ss_ui=true&af_ss_gtm_ui=true&af_sub_siteid=homepage-mid-cta-block-google"} className="flex items-center py-3 px-4 block">
+                  <a id="homepage-mid-cta-block-google" href={TELEGRAM_URL} className="flex items-center py-3 px-4 block">
                     <span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M7.3999 5C7.68885 5 7.95942 5.08164 8.19092 5.22363L14.563 9.00098L14.5073 9.05664L14.5698 9.00098L17.3237 10.6338L17.3296 10.6377C17.8053 10.9039 18.1264 11.4186 18.1265 12.0117C18.1265 12.6081 17.8007 13.1259 17.3208 13.3916L14.5815 15.0078L14.4644 14.8877L14.5737 15.0098L8.19482 18.7734L8.17627 18.7842C7.94852 18.9213 7.68298 19 7.3999 19C6.69203 19 6.09551 18.5086 5.92139 17.8408C5.92087 17.8398 5.92089 17.838 5.92041 17.8369L5.92529 17.8311C5.89153 17.7046 5.87354 17.5712 5.87354 17.4336V6.56445C5.87355 6.42704 5.89115 6.29385 5.92432 6.16699L5.92041 6.16309L5.92139 6.16113C6.09543 5.49279 6.69208 5.00012 7.3999 5Z" fill="currentColor" />
@@ -1810,7 +1073,7 @@ export default function MainContent() {
               <img alt="/assets/image/upload/v1771597449/AvatarsGroup_qmdamq.png" loading="lazy" width="107" height="34" decoding="async" data-nimg="1" className="tablet:mr-4 laptop:mr-4" src="/assets/image/upload/v1771597449/AvatarsGroup_qmdamq.png" style={{ color: "transparent" }} />
               <div>
                 <span className="mr-1 text-[14px] leading-[140%] font-feeld text-primary-white font-normal">
-                  {"Freely explore your desires alongside"}
+                  {"Join the network alongside"}
                 </span>
                 <span className="mr-1 text-[14px] leading-[140%] font-feeld text-secondary-yellow font-medium">
                   {"14M+ people"}
@@ -1844,7 +1107,7 @@ export default function MainContent() {
               <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(101, 33, 132)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
-                    {"“I met someone on Feeld who opened my heart and gave me hope for dating. Totally did not expect it, nor was I ready for it (oh, and they live ten minutes away from me!) Sometimes the most beautiful experiences arise when you least expect it.”"}
+                    {"“I met someone on TokenMingle who opened a new partnership door and gave me hope for networking. Totally did not expect it, nor was I ready for it (oh, and their office is ten minutes away from me!) Sometimes the most beautiful collaborations arise when you least expect it.”"}
                   </p>
                 </div>
                 <div className="bottomContainer">
@@ -1890,7 +1153,7 @@ export default function MainContent() {
                             </svg>
                           </div>
                           <div className="textContainer">
-                            {"Pansexual"}
+                            {"Investor"}
                           </div>
                         </div>
                       </div>
@@ -1901,7 +1164,7 @@ export default function MainContent() {
               <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(57, 74, 203)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
-                    {"“I recently recommended Feeld to a friend who was struggling to find people they really connected with. It really allows for open communication where there is less pressure to fit into a particular box.”"}
+                    {"“I recently recommended TokenMingle to a founder who was struggling to find the right early-stage investors. It really allows for open communication where there is less pressure to pitch perfectly.”"}
                   </p>
                 </div>
                 <div className="bottomContainer">
@@ -1958,7 +1221,7 @@ export default function MainContent() {
               <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(0, 140, 86)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
-                    {"“Feeld, in my opinion, is the one app that allows you to lose any expectations around a ‘date’. I’ve met lovers and lovers-turned friends for life, and my next connection could be one of the above or something completely new, and that’s the beauty of being here.”"}
+                    {"“TokenMingle, in my opinion, is the one app that allows you to lose any expectations around networking. I’ve met investors and investors-turned friends for life, and my next connection could be one of the above or something completely new, and that’s the beauty of being here.”"}
                   </p>
                 </div>
                 <div className="bottomContainer">
@@ -2004,7 +1267,7 @@ export default function MainContent() {
                             </svg>
                           </div>
                           <div className="textContainer">
-                            {"Pansexual"}
+                            {"Investor"}
                           </div>
                         </div>
                       </div>
@@ -2015,7 +1278,7 @@ export default function MainContent() {
               <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(99, 12, 0)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
-                    {"“My first Feeld experience; I was fortunate to be asked by someone who was organising a private party to attend one of their events. I had never been to one before so I decided to go along and see what the vibe would be like. I met some amazing people and it opened up my eyes to a multitude of possibilities, relationship styles and how people feel safe enough to express themselves.”"}
+                    {"“My first TokenMingle experience; I was fortunate to be asked by someone who was organising a private side event to attend. I met some amazing builders and it opened up my eyes to a multitude of partnership possibilities and how people feel open enough to share their big ideas.”"}
                   </p>
                 </div>
                 <div className="bottomContainer">
@@ -2072,7 +1335,7 @@ export default function MainContent() {
               <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(101, 33, 132)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
-                    {"“I got on Feeld after going through a breakup shortly after moving to a new city, a gorgeous woman reached out with an offer of friendship saying she knew what it was like to try to get settled somewhere new. It was so sweet and we’re still friends to this day! I’ve probably made just as many new friends as potential lovers on Feeld.”"}
+                    {"“I got on TokenMingle after going through a breakup shortly after moving to a new city, a gorgeous woman reached out with an offer of friendship saying she knew what it was like to try to get settled somewhere new. It was so sweet and we’re still friends to this day! I’ve probably made just as many new friends as potential co-founders on TokenMingle.”"}
                   </p>
                 </div>
                 <div className="bottomContainer">
@@ -2118,7 +1381,7 @@ export default function MainContent() {
                             </svg>
                           </div>
                           <div className="textContainer">
-                            {"Bisexual"}
+                            {"Founder"}
                           </div>
                         </div>
                       </div>
@@ -2129,7 +1392,7 @@ export default function MainContent() {
               <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(57, 74, 203)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
-                    {"“My first experience on Feeld was with a partner that we connected amazingly sexually (hours and hours of good sex). Our paths changed but we still talk deeply and share our inmost thoughts. We are still going out for playful dates but no sex anymore (long story!) I’m really grateful for this first connection.”"}
+                    {"“My first experience on TokenMingle was with a founder that we connected amazingly intellectually (hours and hours of good brainstorming). Our paths changed but we still talk deeply and share our inmost thoughts. We are still meeting up for coffee syncs! I’m really grateful for this first connection.”"}
                   </p>
                 </div>
                 <div className="bottomContainer">
@@ -2175,7 +1438,7 @@ export default function MainContent() {
                             </svg>
                           </div>
                           <div className="textContainer">
-                            {"Bisexual"}
+                            {"Founder"}
                           </div>
                         </div>
                       </div>
@@ -2186,7 +1449,7 @@ export default function MainContent() {
               <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(0, 140, 86)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
-                    {"“I last recommended Feeld to my partner! They're looking to make more connections in their city and I suggested Feeld would be a great place to find like minded queers.”"}
+                    {"“I last recommended TokenMingle to my co-founder! They're looking to make more connections in their city and I suggested TokenMingle would be a great place to find like-minded builders.”"}
                   </p>
                 </div>
                 <div className="bottomContainer">
@@ -2232,7 +1495,7 @@ export default function MainContent() {
                             </svg>
                           </div>
                           <div className="textContainer">
-                            {"Bisexual"}
+                            {"Founder"}
                           </div>
                         </div>
                       </div>
@@ -2243,7 +1506,7 @@ export default function MainContent() {
               <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(99, 12, 0)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
-                    {"“Feeld has become such an important platform for me and my partner to explore our connections to other people with an immense amount of transparency and safety. The ability to find like minded individuals who are able to communicate with emotional intelligence is unparalleled.”"}
+                    {"“TokenMingle has become such an important platform for me and my team to explore our connections to other people with an immense amount of transparency and safety. The ability to find like minded individuals who are able to communicate with emotional intelligence is unparalleled.”"}
                   </p>
                 </div>
                 <div className="bottomContainer">
@@ -2289,7 +1552,7 @@ export default function MainContent() {
                             </svg>
                           </div>
                           <div className="textContainer">
-                            {"Queer"}
+                            {"Designer"}
                           </div>
                         </div>
                       </div>
@@ -2300,7 +1563,7 @@ export default function MainContent() {
               <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(101, 33, 132)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
-                    {"“My last Feeld experience was I met a really cool person who shares a lot of similar feelings about their gender as I do, and the conversations we had about it helped me learn more about myself.”"}
+                    {"“My last TokenMingle experience was I met a really cool developer who shares a lot of similar views on scaling distributed systems, and the conversations we had about it helped me learn so much.”"}
                   </p>
                 </div>
                 <div className="bottomContainer">
@@ -2346,7 +1609,7 @@ export default function MainContent() {
                             </svg>
                           </div>
                           <div className="textContainer">
-                            {"Queer"}
+                            {"Designer"}
                           </div>
                         </div>
                       </div>
@@ -2357,7 +1620,7 @@ export default function MainContent() {
               <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(57, 74, 203)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
-                    {"“On Feeld I found out that I like being submissive. He was my first dom and the best person to start this experience with. He guided through every steps and made me discover a beautiful world.”"}
+                    {"“On TokenMingle I found my first technical co-founder. He was a senior engineer and the best person to start this startup journey with. He guided me through the early architecture and helped me build an incredible product.”"}
                   </p>
                 </div>
                 <div className="bottomContainer">
@@ -2403,7 +1666,7 @@ export default function MainContent() {
                             </svg>
                           </div>
                           <div className="textContainer">
-                            {"Pansexual"}
+                            {"Investor"}
                           </div>
                         </div>
                       </div>
@@ -2425,238 +1688,7 @@ export default function MainContent() {
         </div>
       </div>
     </section>
-    <div className="pin-spacer" style={{ order: "0", placeSelf: "auto", gridArea: "auto", zIndex: "auto", float: "none", flexShrink: "1", display: "flex", margin: "0px", inset: "auto", position: "relative", flexBasis: "auto", overflow: "visible", boxSizing: "border-box", width: "1440px", height: "2092px", padding: "0px 0px 950px" }}>
-      <div className="safetySection w-full flex flex-col items-center pb-12 pt-12 laptop:pt-36" style={{ translate: "none", rotate: "none", scale: "none", inset: "0px auto auto 0px", margin: "0px", maxWidth: "1440px", width: "1440px", maxHeight: "1142px", height: "1142px", padding: "144px 0px 48px", transform: "translate(0px, 0px)" }}>
-        <div className="safetyContainer px-4 laptop:px-[58px] w-full max-w-[1440px] flex flex-col h-[100vh] min-h-[950px] laptop:h-[950px] laptop:min-h-[850px] gap-10 tablet:gap-14 laptop:gap-14">
-          <div className="headerContainer flex flex-row justify-between">
-            <div className="header">
-              <div className="headerLine flex flex-row gap-[2px] tablet:gap-2 laptop:gap-2 w-full justify-start items-center">
-                <div className="textContainer">
-                  <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.4px] tablet:tracking-[-0.56px] laptop:tracking-[-0.56px] leading-[100%] ">
-                    {"A safer"}
-                  </h2>
-                </div>
-                <div className="iconContainer w-10 h-full flex m-0 tablet:my-auto laptop:my-auto justify-center relative">
-                  <div className="svgContainer w-[30px] h-[30px] flex items-center justify-center">
-                    <svg className="text-secondary-highlight w-[24px] h-[24px] tablet:w-[30px] tablet:h-[30px] laptop:w-[30px] laptop:h-[30px]" xmlns="http://www.w3.org/2000/svg" width="27" height="33" viewBox="0 0 27 33" fill="none">
-                      <path d="M13.333 0C18.3457 0 22.4491 3.90606 22.7588 8.84473C22.7709 9.03805 22.777 9.23351 22.7773 9.42969C22.7774 9.47164 22.7722 9.51241 22.7637 9.55176L22.7705 10.5557H26.666L26.667 32.7773H0.000976562L0 10.5557H3.89648L3.90332 9.55176C3.89476 9.51237 3.88862 9.47167 3.88867 9.42969L3.89355 9.13672C3.89668 9.03916 3.90115 8.94156 3.90723 8.84473C3.9451 8.24117 4.04027 7.65226 4.18652 7.08398C4.22534 6.93316 4.26749 6.78356 4.31348 6.63574C5.50957 2.79112 9.0955 0.000150945 13.333 0ZM5.61523 13.3906C4.32152 13.3907 3.23263 14.2746 2.91797 15.4736L2.82715 16.6279V26.582L2.89453 27.7793C3.17402 29.0179 4.27885 29.9432 5.59766 29.9434H21.0518C22.3452 29.9431 23.4333 29.0591 23.748 27.8604L23.8398 26.7051V16.751L23.7715 15.5537C23.4918 14.3152 22.3872 13.3906 21.0684 13.3906H5.61523ZM13.333 2.84082C10.3678 2.84095 7.85891 4.79284 7.02246 7.48047C6.99035 7.58368 6.9607 7.68863 6.93359 7.79395C6.83974 8.15868 6.77531 8.53594 6.74512 8.92285C6.73171 9.0947 6.72559 9.26879 6.72559 9.44434L6.73633 10.5557H19.9414V9.44434C19.9414 9.26882 19.9343 9.09472 19.9209 8.92285C19.6551 5.52137 16.8086 2.84082 13.333 2.84082Z" fill="currentColor" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="textContainer">
-                  <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.4px] tablet:tracking-[-0.56px] laptop:tracking-[-0.56px] leading-[100%] ">
-                    {"space for"}
-                  </h2>
-                </div>
-              </div>
-              <div className="headerLine flex flex-row gap-[2px] tablet:gap-2 laptop:gap-2 w-full justify-start items-center">
-                <div className="textContainer">
-                  <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.4px] tablet:tracking-[-0.56px] laptop:tracking-[-0.56px] leading-[100%] ">
-                    {"your"}
-                  </h2>
-                </div>
-                <div className="iconContainer w-10 h-full flex m-0 tablet:my-auto laptop:my-auto justify-center relative">
-                  <div className="svgContainer w-[30px] h-[30px] flex items-center justify-center">
-                    <svg className="text-secondary-highlight w-[24px] h-[24px] tablet:w-[30px] tablet:h-[30px] laptop:w-[30px] laptop:h-[30px]" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
-                      <g clipPath="url(#clip0_6036_8602)">
-                        <path d="M35.4032 16.0762H35.3524C35.3524 16.0762 35.3016 15.9746 35.2508 15.9238C35.1746 15.8222 35.0476 15.6698 34.8952 15.4413C34.5651 15.0095 34.1333 14.3492 33.6762 13.5111C32.7619 11.8603 31.746 9.44762 31.4159 6.47619V6.24762L31.2381 6.09524L29.4603 4.31746L29.2825 4.13968H29.0286L28.8254 4.11429C28.6984 4.08889 28.4952 4.06349 28.2159 4.03809C27.6825 3.93651 26.9206 3.80952 26.0063 3.53016C24.1778 2.99683 21.7651 2.00635 19.4286 0.126984L19.2762 0H16.2794L16.0762 0.152381C16.0762 0.152381 16.0762 0.177778 16.0508 0.203175C16.0254 0.203175 15.9746 0.253968 15.9238 0.304762C15.8222 0.380952 15.6698 0.507936 15.4413 0.660317C15.0095 0.990476 14.3492 1.42222 13.5111 1.87936C11.8603 2.79365 9.44762 3.80952 6.47619 4.13968H6.24762L6.09524 4.31746L4.31746 6.09524L4.13968 6.27302V6.52698L4.11429 6.73016C4.08889 6.85714 4.06349 7.06032 4.03809 7.33968C3.93651 7.87302 3.80952 8.63492 3.53016 9.54921C2.99683 11.3778 2.00635 13.7905 0.126984 16.127L0 16.2794V19.2762L0.152381 19.4794H0.203175C0.203175 19.4794 0.253968 19.581 0.304762 19.6317C0.380952 19.7333 0.507936 19.8857 0.660317 20.1143C0.990476 20.546 1.42222 21.2063 1.87936 22.0444C2.79365 23.6952 3.80952 26.1079 4.13968 29.0794V29.3079L6.09524 31.2381L6.27302 31.4159H6.52698L6.73016 31.4413C6.85714 31.4667 7.06032 31.4921 7.33968 31.5175C7.87302 31.619 8.63492 31.746 9.54921 32.0254C11.3778 32.5587 13.7905 33.5492 16.127 35.4286L16.2794 35.5556H19.2762L19.4794 35.4032C19.4794 35.4032 19.4794 35.3778 19.5048 35.3524C19.5302 35.3524 19.581 35.3016 19.6317 35.2508C19.7333 35.1746 19.8857 35.0476 20.1143 34.8952C20.546 34.5651 21.2063 34.1333 22.0444 33.6762C23.6952 32.7619 26.1079 31.746 29.0794 31.4159H29.3079L31.4159 29.2825V29.0286L31.4413 28.8254C31.4667 28.6984 31.4921 28.4952 31.5175 28.2159C31.619 27.6825 31.746 26.9206 32.0254 26.0063C32.5587 24.1778 33.5492 21.7651 35.4286 19.4286L35.5556 19.2762V16.2794L35.4032 16.0762ZM31.746 18.2603C30.2476 20.3429 29.0794 22.7048 28.3683 25.1936C28.0635 26.2095 27.8857 27.0984 27.8095 27.7587L27.5048 28.0635C24.9651 28.4698 22.4508 29.3333 20.1905 30.5778C19.2508 31.1111 18.4889 31.5937 17.9556 32H17.5492C15.4667 30.5016 13.1048 29.3333 10.6159 28.6222C9.5746 28.3175 8.68571 28.1143 8.0254 28.0127L7.74603 27.7587C7.33968 25.2444 6.47619 22.7302 5.23175 20.4444C4.69841 19.5048 4.19048 18.7429 3.80952 18.2095V17.3206C5.30794 15.2381 6.47619 12.8762 7.1873 10.3873C7.49206 9.37143 7.66984 8.48254 7.74603 7.82222L8.05079 7.51746C10.5905 7.11111 13.1048 6.24762 15.3651 5.00317C16.2794 4.49524 17.0413 3.9873 17.6 3.58095H17.981C21.7651 6.29841 25.5746 7.23809 27.5302 7.54286L27.8095 7.82222C28.2159 10.3619 29.0794 12.8762 30.3238 15.1365C30.8317 16.0508 31.3397 16.8127 31.746 17.3714V18.2603Z" fill="currentColor" />
-                        <path d="M24.5841 11.0476L16.8889 18.7429C15.9238 19.7079 14.3492 19.7079 13.3841 18.7429L11.0222 16.3556L10.5651 15.9238L10.1079 16.3556L8.45714 18.0318L8 18.4635L8.45714 18.9206L14.6794 25.1429L15.1365 25.6L27.1492 13.5873L27.6063 13.1556L25.0413 10.5905L24.5841 11.0476Z" fill="currentColor" />
-                      </g>
-                      <defs>
-                        <clippath id="clip0_6036_8602">
-                          <rect width="35.5556" height="35.5556" fill="white" />
-                        </clippath>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-                <div className="textContainer">
-                  <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.4px] tablet:tracking-[-0.56px] laptop:tracking-[-0.56px] leading-[100%] ">
-                    {"exploration"}
-                  </h2>
-                </div>
-              </div>
-            </div>
-            <div className="ctaContainer hidden tablet:flex laptop:flex">
-              <button className="text-md font-normal rounded-full w-fit border hover:transition-all duration-300 border-black hover:border-white m-0 h-min bg-primary-white text-primary-black cta-hover-shadow-white hover:transform=[scale(1.1)] hover:text-primary-black hover:bg-primary-white">
-                <a className="block font-feeld text-[18px] font-normal leading-normal px-[28px] py-[18px]" href="https://feeld.co/the-app/trust-and-safety">
-                  {"Safety and Privacy at Feeld"}
-                </a>
-              </button>
-            </div>
-          </div>
-          <div className="safetyContentContainer w-full h-full relative overflow-hidden">
-            <div className="sectionContainer w-full h-full flex flex-col">
-              <div className="contentRow flex flex-col tablet:flex-row laptop:flex-row h-full w-full shrink-0 gap-6 tablet:gap-4 laptop:gap-4 justify-between">
-                <div className="assetContainer relative h-[80%] tablet:h-full laptop:h-full w-full max-w-full tablet:max-w-[550px] laptop:max-w-[550px] flex">
-                  <img alt={"A green screen reading \"You're Verified\" with a circular photo of a person with curly auburn hair. A green verified checkmark sits below the photo, with text: \"Thank you for helping make Feeld a more authentic place. You've unlocked your Verified profile badge - wear it proudly!\""} loading="lazy" decoding="async" data-nimg="fill" className="!h-auto rounded-t-[16px] rounded-bl-[16px] safetyAsset max-h-[100%] object-cover" src="/assets/image/upload/v1781513726/Verification_aizzv2.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent", visibility: "visible" }} />
-                  <img alt="" loading="lazy" decoding="async" data-nimg="fill" className="!h-auto rounded-t-[16px] rounded-bl-[16px] safetyAsset max-h-[100%] object-cover" src="/assets/image/upload/v1780999782/Screenshot_Protection_rukcsr.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent", visibility: "hidden" }} />
-                  <img alt={"An App settings screen under \"Privacy and safety,\" showing an \"Opt out of notes with Pings\" option. An overlaid panel reads \"Blur explicit images\" with a toggle: \"Automatically detect content that may contain nudity. If turned off, it will show without blurring.\""} loading="lazy" decoding="async" data-nimg="fill" className="!h-auto rounded-t-[16px] rounded-bl-[16px] safetyAsset max-h-[100%] object-cover" src="/assets/image/upload/v1781513726/Nudity_Detection_ifzpqz.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent", visibility: "hidden" }} />
-                  <img alt={"A Feeld profile for Kam, 23, Transmasculine, Queer, 5 miles away. Kam stands shirtless on a beach holding a blue bodyboard. Three smaller profile photos float around the phone. The bio begins: \"I know what you're thinking. How do they do it?\""} loading="lazy" decoding="async" data-nimg="fill" className="!h-auto rounded-t-[16px] rounded-bl-[16px] safetyAsset max-h-[100%] object-cover" src="/assets/image/upload/v1781513726/Algorithim_li9k13.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent", visibility: "hidden" }} />
-                  <img alt={"A phone with a purple border showing a \"Tell us what happened\" reporting screen. Text explains it helps the team understand breaches of community guidelines and notes the report is confidential. Below are a \"Tell us more\" field and \"Reason: Fake account.\""} loading="lazy" decoding="async" data-nimg="fill" className="!h-auto rounded-t-[16px] rounded-bl-[16px] safetyAsset max-h-[100%] object-cover" src="/assets/image/upload/v1781513726/Reporting_jap187.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent", visibility: "hidden" }} />
-                  <img alt={"Feeld Discover screen with filter tabs (Desires, Location, Distance, Age) above profile cards. An overlaid panel reads \"Go incognito\" with a toggle, and the text: \"You can browse in Discover, but people won't see you unless you like them first.\""} loading="lazy" decoding="async" data-nimg="fill" className="!h-auto rounded-t-[16px] rounded-bl-[16px] safetyAsset max-h-[100%] object-cover" src="/assets/image/upload/v1781514363/Incognito_Mode_lsemjl.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent", visibility: "hidden" }} />
-                </div>
-                <div className="contentContainer h-full w-full max-w-full tablet:max-w-[612px] laptop:max-w-[612px]">
-                  <div className="sectionsWrapper flex flex-col gap-3 tablet:gap-5 laptop:gap-5">
-                    <div className="accordionItem flex flex-col gap-2">
-                      <div className="flex flex-col tablet:flex-row laptop:flex-row gap-0 tablet:gap-4 laptop:gap-4">
-                        <div className="safetyIconContainer w-[40px] h-[40px] relative shrink-0 hidden tablet:flex laptop:flex" style={{ height: "40px", visibility: "visible" }}>
-                          <img alt="Line icon Green verified tick" loading="lazy" decoding="async" data-nimg="fill" className="" src="/assets/image/upload/v1781513944/Verified_tick_uztzjn.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                        </div>
-                        <div className="border-solid border-[#2B263A] border-b pb-3">
-                          <div className="accordionHeader flex flex-row tablet:flex-row laptop:flex-row gap-2 tablet:gap-2 laptop:gap-2">
-                            <div className="safetyIconContainerMobile w-[24px] h-[24px] relative shrink-0 flex tablet:hidden laptop:hidden">
-                              <img alt="Line icon Green verified tick" loading="lazy" decoding="async" data-nimg="fill" className="" src="/assets/image/upload/v1781513944/Verified_tick_uztzjn.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                            </div>
-                            <h3 className="font-feeld-edge text-[30px] tablet:text-[48px] laptop:text-[48px] font-extralight leading-[100%] tablet:tracking-[-0.48px] laptop:tracking-[-0.32px] accordionHeading text-primary-white opacity-100" style={{ opacity: "1", color: "rgb(255, 255, 255)", paddingTop: "0px" }}>
-                              {"Real people, real profiles"}
-                            </h3>
-                          </div>
-                          <div className="accordionContent h-0 overflow-hidden" style={{ height: "auto" }}>
-                            <div className="contentInner">
-                              <p className="font-feeld-light text-[16px] tablet:text-[18px] laptop:text-[18px] font-light leading-[150%] text-secondary-onSurface pt-2 tablet:pt-2 laptop:pt-2">
-                                {"Honesty is everything. We use biometric identity verification to make sure people are exactly who they say they are."}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordionItem flex flex-col gap-2">
-                      <div className="flex flex-col tablet:flex-row laptop:flex-row gap-0 tablet:gap-4 laptop:gap-4">
-                        <div className="safetyIconContainer w-[40px] h-[40px] relative shrink-0 hidden tablet:flex laptop:flex" style={{ height: "0px", visibility: "hidden" }}>
-                          <img alt="line icon Pink camera" loading="lazy" decoding="async" data-nimg="fill" className="" src="/assets/image/upload/v1781513944/camera_qwhu0m.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                        </div>
-                        <div className="border-solid border-[#2B263A] border-b pb-3">
-                          <div className="accordionHeader flex flex-row tablet:flex-row laptop:flex-row gap-2 tablet:gap-2 laptop:gap-2">
-                            <div className="safetyIconContainerMobile w-[24px] h-[24px] relative shrink-0 flex tablet:hidden laptop:hidden">
-                              <img alt="line icon Pink camera" loading="lazy" decoding="async" data-nimg="fill" className="" src="/assets/image/upload/v1781513944/camera_qwhu0m.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                            </div>
-                            <h3 className="font-feeld-edge text-[30px] tablet:text-[48px] laptop:text-[48px] font-extralight leading-[100%] tablet:tracking-[-0.48px] laptop:tracking-[-0.32px] accordionHeading text-[#979797] opacity-20" style={{ opacity: "0.2", color: "rgb(151, 151, 151)", paddingTop: "0px" }}>
-                              {"Screenshot protection"}
-                            </h3>
-                          </div>
-                          <div className="accordionContent h-0 overflow-hidden" style={{ height: "0px" }}>
-                            <div className="contentInner">
-                              <p className="font-feeld-light text-[16px] tablet:text-[18px] laptop:text-[18px] font-light leading-[150%] text-secondary-onSurface pt-2 tablet:pt-2 laptop:pt-2">
-                                {"If you send an image in chat, it cannot be screenshot. Explore your desires with ease knowing that your privacy is embedded into our design."}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordionItem flex flex-col gap-2">
-                      <div className="flex flex-col tablet:flex-row laptop:flex-row gap-0 tablet:gap-4 laptop:gap-4">
-                        <div className="safetyIconContainer w-[40px] h-[40px] relative shrink-0 hidden tablet:flex laptop:flex" style={{ height: "0px", visibility: "hidden" }}>
-                          <img alt="blue icon with eye with line through it - Consent-driven design" loading="lazy" decoding="async" data-nimg="fill" className="" src="/assets/image/upload/v1781513944/incognito_eye_ycnfft.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                        </div>
-                        <div className="border-solid border-[#2B263A] border-b pb-3">
-                          <div className="accordionHeader flex flex-row tablet:flex-row laptop:flex-row gap-2 tablet:gap-2 laptop:gap-2">
-                            <div className="safetyIconContainerMobile w-[24px] h-[24px] relative shrink-0 flex tablet:hidden laptop:hidden">
-                              <img alt="blue icon with eye with line through it - Consent-driven design" loading="lazy" decoding="async" data-nimg="fill" className="" src="/assets/image/upload/v1781513944/incognito_eye_ycnfft.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                            </div>
-                            <h3 className="font-feeld-edge text-[30px] tablet:text-[48px] laptop:text-[48px] font-extralight leading-[100%] tablet:tracking-[-0.48px] laptop:tracking-[-0.32px] accordionHeading text-[#979797] opacity-20" style={{ opacity: "0.2", color: "rgb(151, 151, 151)", paddingTop: "0px" }}>
-                              {"Consent-driven design"}
-                            </h3>
-                          </div>
-                          <div className="accordionContent h-0 overflow-hidden" style={{ height: "0px" }}>
-                            <div className="contentInner">
-                              <p className="font-feeld-light text-[16px] tablet:text-[18px] laptop:text-[18px] font-light leading-[150%] text-secondary-onSurface pt-2 tablet:pt-2 laptop:pt-2">
-                                {"On Feeld, you choose what you see. Enable nudity detection in your settings and explicit images sent in chat will automatically blur. If you consent to receipt, tap to unblur. You always have a choice."}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordionItem flex flex-col gap-2">
-                      <div className="flex flex-col tablet:flex-row laptop:flex-row gap-0 tablet:gap-4 laptop:gap-4">
-                        <div className="safetyIconContainer w-[40px] h-[40px] relative shrink-0 hidden tablet:flex laptop:flex" style={{ height: "0px", visibility: "hidden" }}>
-                          <img alt="Yellow square icon" loading="lazy" decoding="async" data-nimg="fill" className="" src="/assets/image/upload/v1781513944/square_gey1ot.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                        </div>
-                        <div className="border-solid border-[#2B263A] border-b pb-3">
-                          <div className="accordionHeader flex flex-row tablet:flex-row laptop:flex-row gap-2 tablet:gap-2 laptop:gap-2">
-                            <div className="safetyIconContainerMobile w-[24px] h-[24px] relative shrink-0 flex tablet:hidden laptop:hidden">
-                              <img alt="Yellow square icon" loading="lazy" decoding="async" data-nimg="fill" className="" src="/assets/image/upload/v1781513944/square_gey1ot.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                            </div>
-                            <h3 className="font-feeld-edge text-[30px] tablet:text-[48px] laptop:text-[48px] font-extralight leading-[100%] tablet:tracking-[-0.48px] laptop:tracking-[-0.32px] accordionHeading text-[#979797] opacity-20" style={{ opacity: "0.2", color: "rgb(151, 151, 151)", paddingTop: "0px" }}>
-                              {"No gatekeeping profiles"}
-                            </h3>
-                          </div>
-                          <div className="accordionContent h-0 overflow-hidden" style={{ height: "0px" }}>
-                            <div className="contentInner">
-                              <p className="font-feeld-light text-[16px] tablet:text-[18px] laptop:text-[18px] font-light leading-[150%] text-secondary-onSurface pt-2 tablet:pt-2 laptop:pt-2">
-                                {"People don't belong behind paywalls. On Feeld, we will never rank profiles. You decide who you like—we don't need to do it for you."}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordionItem flex flex-col gap-2">
-                      <div className="flex flex-col tablet:flex-row laptop:flex-row gap-0 tablet:gap-4 laptop:gap-4">
-                        <div className="safetyIconContainer w-[40px] h-[40px] relative shrink-0 hidden tablet:flex laptop:flex" style={{ height: "0px", visibility: "hidden" }}>
-                          <img alt="line art pink heart icon" loading="lazy" decoding="async" data-nimg="fill" className="" src="/assets/image/upload/v1781513943/pink-heart_phyhdc.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                        </div>
-                        <div className="border-solid border-[#2B263A] border-b pb-3">
-                          <div className="accordionHeader flex flex-row tablet:flex-row laptop:flex-row gap-2 tablet:gap-2 laptop:gap-2">
-                            <div className="safetyIconContainerMobile w-[24px] h-[24px] relative shrink-0 flex tablet:hidden laptop:hidden">
-                              <img alt="line art pink heart icon" loading="lazy" decoding="async" data-nimg="fill" className="" src="/assets/image/upload/v1781513943/pink-heart_phyhdc.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                            </div>
-                            <h3 className="font-feeld-edge text-[30px] tablet:text-[48px] laptop:text-[48px] font-extralight leading-[100%] tablet:tracking-[-0.48px] laptop:tracking-[-0.32px] accordionHeading text-[#979797] opacity-20" style={{ opacity: "0.2", color: "rgb(151, 151, 151)", paddingTop: "0px" }}>
-                              {"24/7 global safety team"}
-                            </h3>
-                          </div>
-                          <div className="accordionContent h-0 overflow-hidden" style={{ height: "0px" }}>
-                            <div className="contentInner">
-                              <p className="font-feeld-light text-[16px] tablet:text-[18px] laptop:text-[18px] font-light leading-[150%] text-secondary-onSurface pt-2 tablet:pt-2 laptop:pt-2">
-                                {"Despite setting strong boundaries with our community guidelines, things can happen. What matters is how we respond, and we do our best to respond to any safety concern as quickly as possible."}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordionItem flex flex-col gap-2">
-                      <div className="flex flex-col tablet:flex-row laptop:flex-row gap-0 tablet:gap-4 laptop:gap-4">
-                        <div className="safetyIconContainer w-[40px] h-[40px] relative shrink-0 hidden tablet:flex laptop:flex" style={{ height: "0px", visibility: "hidden" }}>
-                          <img alt="red incognito mask line icon" loading="lazy" decoding="async" data-nimg="fill" className="" src="/assets/image/upload/v1781513943/red-mask_i3vlvx.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                        </div>
-                        <div className="border-solid border-[#2B263A] border-b pb-3">
-                          <div className="accordionHeader flex flex-row tablet:flex-row laptop:flex-row gap-2 tablet:gap-2 laptop:gap-2">
-                            <div className="safetyIconContainerMobile w-[24px] h-[24px] relative shrink-0 flex tablet:hidden laptop:hidden">
-                              <img alt="red incognito mask line icon" loading="lazy" decoding="async" data-nimg="fill" className="" src="/assets/image/upload/v1781513943/red-mask_i3vlvx.svg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
-                            </div>
-                            <h3 className="font-feeld-edge text-[30px] tablet:text-[48px] laptop:text-[48px] font-extralight leading-[100%] tablet:tracking-[-0.48px] laptop:tracking-[-0.32px] accordionHeading text-[#979797] opacity-20" style={{ opacity: "0.2", color: "rgb(151, 151, 151)" }}>
-                              {"Stay hidden"}
-                            </h3>
-                          </div>
-                          <div className="accordionContent h-0 overflow-hidden" style={{ height: "0px" }}>
-                            <div className="contentInner">
-                              <p className="font-feeld-light text-[16px] tablet:text-[18px] laptop:text-[18px] font-light leading-[150%] text-secondary-onSurface pt-2 tablet:pt-2 laptop:pt-2">
-                                {"Browse securely with Incognito mode, which hides your profile in the feed. Plus, enjoy extra privacy with screenshot protection. You can also set timers for photos or send videos viewable only once."}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="ctaContainer flex tablet:hidden laptop:hidden">
-            <button className="text-md font-normal rounded-full border hover:transition-all duration-300 border-black hover:border-white m-0 h-min bg-primary-white text-primary-black cta-hover-shadow-white hover:transform=[scale(1.1)] hover:text-primary-black hover:bg-primary-white w-full">
-              <a className="block font-feeld text-[18px] font-normal leading-normal px-[28px] py-[18px]" href="https://feeld.co/the-app/trust-and-safety">
-                {"Safety and Privacy at Feeld"}
-              </a>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <SafetySection />
     <section className="eventsCarouselSection w-full flex flex-col items-center overflow-hidden py-12">
       <div className="eventsCarouselContainer w-full max-w-[1440px] flex flex-col px-4 laptop:px-[58px] gap-10 tablet:gap-14 laptop:gap-14">
         <div className="eventsCarouselHeaderContainer flex flex-col gap-2 tablet:gap-3 laptop:gap-3">
@@ -2665,7 +1697,7 @@ export default function MainContent() {
               <div className="headerLine flex flex-row gap-1 tablet:gap-2 laptop:gap-2 w-full">
                 <div className="textContainer">
                   <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.4px] tablet:tracking-[-0.56px] laptop:tracking-[-0.56px] leading-[100%] ">
-                    {"Let's meet"}
+                    {eventsContent.heading}
                   </h2>
                 </div>
                 <div className="iconContainer w-10 h-full flex tablet:my-auto laptop:my-auto justify-center items-center relative">
@@ -2682,7 +1714,7 @@ export default function MainContent() {
                 </div>
                 <div className="textContainer">
                   <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.4px] tablet:tracking-[-0.56px] laptop:tracking-[-0.56px] leading-[100%] ">
-                    {"in-person"}
+                    ""
                   </h2>
                 </div>
               </div>
@@ -2697,7 +1729,7 @@ export default function MainContent() {
           </div>
           <div className="textContent max-w-[280px] tablet:max-w-[430px] laptop:max-w-[430px]">
             <p className="font-feeld-light text-[16px] tablet:text-[18px] laptop:text-[18px] font-light leading-[150%] text-secondary-onSurface">
-              {"You're invited to our events, thrown in collaboration with community partners. See you there?"}
+              {"You're invited to our events, thrown in collaboration with sponsors and investors. See you there?"}
             </p>
           </div>
         </div>
@@ -2722,7 +1754,7 @@ export default function MainContent() {
                   </div>
                   <div className="flex flex-col gap-[6px]">
                     <div className="eventName w-full text-primary-white font-feeld text-[18px] leading-[120%] font-normal">
-                      {"Feeld Social Soho"}
+                      {"TokenMingle Social Soho"}
                     </div>
                     <div className="eventDate w-full text-secondary-onSurface text-[13px] leading-[140%] font-normal">
                       {"October 7, 2026 at 8:00 PM"}
@@ -2744,7 +1776,7 @@ export default function MainContent() {
                     </span>
                   </div>
                   <div className="assetContainer w-full h-[190px] tablet:h-[220px] laptop:h-[220px] relative overflow-hidden will-change-transform rounded-tr-[14px] rounded-b-[14px]">
-                    <img alt="" loading="lazy" decoding="async" data-nimg="fill" className="aspect-square object-cover rounded-tr-[14px] rounded-b-[14px] overflow-hidden imageAsset" src="/assets/image/upload/q_auto/v1770906053/Feeld_Over_30_Social_Landscape_3200x1600_nryqev_dhx2je.jpg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
+                    <img alt="" loading="lazy" decoding="async" data-nimg="fill" className="aspect-square object-cover rounded-tr-[14px] rounded-b-[14px] overflow-hidden imageAsset" src="/assets/image/upload/q_auto/v1770906053/TokenMingle_Over_30_Social_Landscape_3200x1600_nryqev_dhx2je.jpg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
                   </div>
                   <div className="flex flex-col gap-[6px]">
                     <div className="eventName w-full text-primary-white font-feeld text-[18px] leading-[120%] font-normal">
@@ -2770,11 +1802,11 @@ export default function MainContent() {
                     </span>
                   </div>
                   <div className="assetContainer w-full h-[190px] tablet:h-[220px] laptop:h-[220px] relative overflow-hidden will-change-transform rounded-tr-[14px] rounded-b-[14px]">
-                    <img alt="" loading="lazy" decoding="async" data-nimg="fill" className="aspect-square object-cover rounded-tr-[14px] rounded-b-[14px] overflow-hidden imageAsset" src="/assets/image/upload/q_auto/v1787605152/Feeld_Restroom_hiinvf.jpg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
+                    <img alt="" loading="lazy" decoding="async" data-nimg="fill" className="aspect-square object-cover rounded-tr-[14px] rounded-b-[14px] overflow-hidden imageAsset" src="/assets/image/upload/q_auto/v1787605152/TokenMingle_Restroom_hiinvf.jpg" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
                   </div>
                   <div className="flex flex-col gap-[6px]">
                     <div className="eventName w-full text-primary-white font-feeld text-[18px] leading-[120%] font-normal">
-                      {"Coven X Feeld Toilets"}
+                      {"Coven X TokenMingle Toilets"}
                     </div>
                     <div className="eventDate w-full text-secondary-onSurface text-[13px] leading-[140%] font-normal">
                       {"December 31, 2026 at 2:00 PM"}
@@ -2812,21 +1844,21 @@ export default function MainContent() {
               <div className="titleLine flex flex-row gap-1 tablet:gap-2 laptop:gap-2 w-full flex-wrap">
                 <div className="textContainer">
                   <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.4px] tablet:tracking-[-0.56px] laptop:tracking-[-0.56px] leading-[100%] ">
-                    {"A dating app"}
+                    {"Built for the"}
                   </h2>
                 </div>
               </div>
               <div className="titleLine flex flex-row gap-1 tablet:gap-2 laptop:gap-2 w-full flex-wrap">
                 <div className="textContainer">
                   <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.4px] tablet:tracking-[-0.56px] laptop:tracking-[-0.56px] leading-[100%] ">
-                    {"founded on a"}
+                    {"real conference"}
                   </h2>
                 </div>
               </div>
               <div className="titleLine flex flex-row gap-1 tablet:gap-2 laptop:gap-2 w-full flex-wrap">
                 <div className="textContainer">
                   <h2 className="font-feeld-edge text-[40px] tablet:text-[56px] laptop:text-[56px] font-extralight tracking-[-0.4px] tablet:tracking-[-0.56px] laptop:tracking-[-0.56px] leading-[100%] ">
-                    {"love letter"}
+                    {"experience"}
                   </h2>
                 </div>
                 <div className="iconContainer w-10 h-full flex justify-center relative self-center">
@@ -2840,10 +1872,10 @@ export default function MainContent() {
             </div>
             <div className="copy flex flex-col gap-4">
               <p className="font-feeld-light text-[16px] tablet:text-[18px] laptop:text-[18px] font-light leading-[150%] text-secondary-onSurface">
-                {"Over a decade ago, Feeld’s CEO and co-founder Ana Kirova confessed to her partner that she had fallen in love with a woman. Instead of ending their relationship, it sparked the development of Feeld—an app for meaningful connections of any kind."}
+                {"Over a decade of attending crypto conferences, we realized the best connections happen off the main stage. We built a way to find exactly who you want to meet, exactly when they are free."}
               </p>
               <p className="font-feeld-light text-[16px] tablet:text-[18px] laptop:text-[18px] font-light leading-[150%] text-secondary-onSurface">
-                {"Designed for Feeld members, by Feeld members, we are committed to our mission: to elevate the human experience of sexuality and relationships."}
+                {"Designed for attendees, by attendees, we are committed to our mission: to elevate the human experience of networking and serendipity."}
               </p>
             </div>
             <div className="ctaContainer pt-1 tablet:pt-5 laptop:pt-5">
@@ -2915,7 +1947,7 @@ export default function MainContent() {
                     </div>
                   </div>
                   <div className="contentHeader w-full font-feeld-edge text-[20px] tablet:text-[24px] laptop:text-[24px] font-extralight leading-[120%] tracking-[0.24px] text-primary-white">
-                    {"WTF is GGG? Look it up in the Feeld Glossary"}
+                    {"WTF is GGG? Look it up in the TokenMingle Glossary"}
                   </div>
                 </div>
               </a>
@@ -2941,7 +1973,7 @@ export default function MainContent() {
                   </div>
                 </div>
               </a>
-              <a href="ask-feeld/how-to/how-to-talk-about-kink-with-new-partners">
+              <a href="updates/networking-guide">
                 <div className="contentCarouselItem min-w-[180px] tablet:min-w-[430px] laptop:min-w-[430px] h-full flex flex-col gap-4">
                   <div className="assetContainer relative w-full h-[220px] tablet:h-[426px] laptop:h-[426px] overflow-hidden rounded-tr-[16px] rounded-b-[16px] border-[0.6px] border-solid border-secondary-darkGray">
                     <img alt="" loading="lazy" decoding="async" data-nimg="fill" className="h-full w-full object-cover rounded-tr-[16px] rounded-b-[16px] contentCarouselAsset will-change-transform" src="/assets/image/upload/v1783524441/Blog_article_image-1_c2rel2.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
@@ -2959,7 +1991,7 @@ export default function MainContent() {
                     </div>
                   </div>
                   <div className="contentHeader w-full font-feeld-edge text-[20px] tablet:text-[24px] laptop:text-[24px] font-extralight leading-[120%] tracking-[0.24px] text-primary-white">
-                    {"What sexual kinks are and how to talk about them with new partners"}
+                    {"How to navigate side events and strike up conversations with founders"}
                   </div>
                 </div>
               </a>
@@ -2981,11 +2013,11 @@ export default function MainContent() {
                     </div>
                   </div>
                   <div className="contentHeader w-full font-feeld-edge text-[20px] tablet:text-[24px] laptop:text-[24px] font-extralight leading-[120%] tracking-[0.24px] text-primary-white">
-                    {"Heteroflexibility explained: A deep dive into the “mostly straight” identity"}
+                    {"VC funding explained: A deep dive into early-stage term sheets"}
                   </div>
                 </div>
               </a>
-              <a href="ask-feeld/how-to/sober-dating-a-guide-to-dates-without-alcohol">
+              <a href="ask-feeld/how-to/introvert-networking-guide">
                 <div className="contentCarouselItem min-w-[180px] tablet:min-w-[430px] laptop:min-w-[430px] h-full flex flex-col gap-4">
                   <div className="assetContainer relative w-full h-[220px] tablet:h-[426px] laptop:h-[426px] overflow-hidden rounded-tr-[16px] rounded-b-[16px] border-[0.6px] border-solid border-secondary-darkGray">
                     <img alt="" loading="lazy" decoding="async" data-nimg="fill" className="h-full w-full object-cover rounded-tr-[16px] rounded-b-[16px] contentCarouselAsset will-change-transform" src="/assets/image/upload/v1783524441/Blog_article_image-3_lrvlzr.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
@@ -3003,7 +2035,7 @@ export default function MainContent() {
                     </div>
                   </div>
                   <div className="contentHeader w-full font-feeld-edge text-[20px] tablet:text-[24px] laptop:text-[24px] font-extralight leading-[120%] tracking-[0.24px] text-primary-white">
-                    {"A guide to sober dating: Making connections without alcohol"}
+                    {"A guide for introverts: Making meaningful connections at big conferences"}
                   </div>
                 </div>
               </a>
@@ -3025,7 +2057,7 @@ export default function MainContent() {
                     </div>
                   </div>
                   <div className="contentHeader w-full font-feeld-edge text-[20px] tablet:text-[24px] laptop:text-[24px] font-extralight leading-[120%] tracking-[0.24px] text-primary-white">
-                    {"A Week on Feeld with… a play party exhibitionist looking to build community"}
+                    {"A Week on TokenMingle with… a serial entrepreneur looking to build their next team"}
                   </div>
                 </div>
               </a>
@@ -3094,7 +2126,7 @@ export default function MainContent() {
               {"An arts and literary magazine"}
             </p>
             <p className="font-feeld-analogia text-[22px] laptop:text-[24px] desktop:text-[28px] font-normal leading-[120%] tracking-[-0.44px] laptop:tracking-[-0.56px] text-primary-black">
-              {"exploring sexuality and relationships"}
+              {"exploring new ventures and startups"}
             </p>
           </div>
           <div className="bannerCtaContainer flex tablet:flex laptop:hidden desktop:flex flex-col justify-center px-4 laptop:px-0">
@@ -3129,7 +2161,7 @@ export default function MainContent() {
           </div>
         </div>
         <div className="header text-primary-white font-feeld-edge text-[64px] laptop:text-[122px] font-extralight leading-[100%] tracking-[-1.22px] pt-5 flex justify-center">
-          {"Join Feeld"}
+          {"Join TokenMingle"}
         </div>
         <div className="subText text-secondary-onSurface font-feeld text-[16px] leading-[150%] flex justify-center pt-0 laptop:pt-2">
           {"Create the relationship(s) you desire."}
@@ -3159,6 +2191,7 @@ export default function MainContent() {
           </span>
         </div>
       </div>
+    </div>
     </div>
     </div>
   );
