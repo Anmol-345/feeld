@@ -288,9 +288,14 @@ export default function MainContent() {
       </section>
       <section className="carouselSection flex flex-col items-center gap-[100px] w-full h-min pt-0 pb-6 tablet:py-6 laptop:py-6 px-0 relative overflow-hidden">
         <div className="carouselContainer relative w-full h-[360px] tablet:h-[420px] laptop:h-[420px]">
-          <div className="flex w-full h-full items-center m-0 p-0 overflow-hidden">
-            <ul className="carouselList flex flex-row relative w-full h-full max-w-full max-h-full items-center m-0 p-0 gap-6 list-none will-change-transform">
-              <li className="carouselItem w-[260px] min-w-[260px] tablet:w-80 tablet:min-w-80 laptop:w-80 laptop:min-w-80 h-full will-change-transform" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(945.672%, 0%) translate3d(0px, 0px, 0px)" }}>
+          <style>{`
+            .hide-scrollbar::-webkit-scrollbar { display: none; }
+            .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+            .carouselList li.carouselItem { transform: none !important; }
+          `}</style>
+          <div className="flex w-full h-full items-center m-0 p-0 overflow-x-auto hide-scrollbar snap-x snap-mandatory">
+            <ul className="carouselList flex flex-row relative w-max h-full items-center m-0 px-4 py-0 gap-6 list-none will-change-transform">
+              <li className="carouselItem snap-center w-[260px] min-w-[260px] tablet:w-80 tablet:min-w-80 laptop:w-80 laptop:min-w-80 h-full will-change-transform" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(945.672%, 0%) translate3d(0px, 0px, 0px)" }}>
                 <div className="communityCarouselItemContainer h-full relative block rounded-b-xl rounded-tl-xl border-inherit will-change-transform bg-transparent">
                   <div className="carouselImage absolute h-full inset-0 block rounded-[inherit] top-0 bottom-0 right-0 left-0">
                     <img alt="user profile image" decoding="async" data-nimg="fill" className="block h-full object-cover object-center rounded-[inherit] rounded-b-[16px]" src="/assets/image/upload/v1778019432/Testimonial_bgn1ne.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
@@ -351,7 +356,7 @@ export default function MainContent() {
                   </div>
                 </div>
               </li>
-              <li className="carouselItem w-[260px] min-w-[260px] tablet:w-80 tablet:min-w-80 laptop:w-80 laptop:min-w-80 h-full will-change-transform" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(-129.64%, 0%) translate3d(0px, 0px, 0px)" }}>
+              <li className="carouselItem snap-center w-[260px] min-w-[260px] tablet:w-80 tablet:min-w-80 laptop:w-80 laptop:min-w-80 h-full will-change-transform" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(-129.64%, 0%) translate3d(0px, 0px, 0px)" }}>
                 <div className="communityCarouselItemContainer h-full relative block rounded-b-xl rounded-tl-xl border-inherit will-change-transform bg-transparent">
                   <div className="carouselImage absolute h-full inset-0 block rounded-[inherit] top-0 bottom-0 right-0 left-0">
                     <img alt="user profile image" decoding="async" data-nimg="fill" className="block h-full object-cover object-center rounded-[inherit] rounded-b-[16px]" src="/assets/image/upload/v1778019432/Testimonial-1_bk7bgb.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
@@ -401,7 +406,7 @@ export default function MainContent() {
                   </div>
                 </div>
               </li>
-              <li className="carouselItem w-[260px] min-w-[260px] tablet:w-80 tablet:min-w-80 laptop:w-80 laptop:min-w-80 h-full will-change-transform" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(-129.328%, 0%) translate3d(0px, 0px, 0px)" }}>
+              <li className="carouselItem snap-center w-[260px] min-w-[260px] tablet:w-80 tablet:min-w-80 laptop:w-80 laptop:min-w-80 h-full will-change-transform" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(-129.328%, 0%) translate3d(0px, 0px, 0px)" }}>
                 <div className="communityCarouselItemContainer h-full relative block rounded-b-xl rounded-tl-xl border-inherit will-change-transform bg-transparent">
                   <div className="carouselImage absolute h-full inset-0 block rounded-[inherit] top-0 bottom-0 right-0 left-0">
                     <img alt="user profile image" decoding="async" data-nimg="fill" className="block h-full object-cover object-center rounded-[inherit] rounded-b-[16px]" src="/assets/image/upload/v1778019432/Testimonial-2_mukxts.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
@@ -462,7 +467,7 @@ export default function MainContent() {
                   </div>
                 </div>
               </li>
-              <li className="carouselItem w-[260px] min-w-[260px] tablet:w-80 tablet:min-w-80 laptop:w-80 laptop:min-w-80 h-full will-change-transform" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(-129.175%, 0%) translate3d(0px, 0px, 0px)" }}>
+              <li className="carouselItem snap-center w-[260px] min-w-[260px] tablet:w-80 tablet:min-w-80 laptop:w-80 laptop:min-w-80 h-full will-change-transform" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(-129.175%, 0%) translate3d(0px, 0px, 0px)" }}>
                 <div className="communityCarouselItemContainer h-full relative block rounded-b-xl rounded-tl-xl border-inherit will-change-transform bg-transparent">
                   <div className="carouselImage absolute h-full inset-0 block rounded-[inherit] top-0 bottom-0 right-0 left-0">
                     <img alt="user profile image" decoding="async" data-nimg="fill" className="block h-full object-cover object-center rounded-[inherit] rounded-b-[16px]" src="/assets/image/upload/v1778019432/Testimonial-3_jbjgqm.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
@@ -517,7 +522,7 @@ export default function MainContent() {
                   </div>
                 </div>
               </li>
-              <li className="carouselItem w-[260px] min-w-[260px] tablet:w-80 tablet:min-w-80 laptop:w-80 laptop:min-w-80 h-full will-change-transform" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(-129.328%, 0%) translate3d(0px, 0px, 0px)" }}>
+              <li className="carouselItem snap-center w-[260px] min-w-[260px] tablet:w-80 tablet:min-w-80 laptop:w-80 laptop:min-w-80 h-full will-change-transform" style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(-129.328%, 0%) translate3d(0px, 0px, 0px)" }}>
                 <div className="communityCarouselItemContainer h-full relative block rounded-b-xl rounded-tl-xl border-inherit will-change-transform bg-transparent">
                   <div className="carouselImage absolute h-full inset-0 block rounded-[inherit] top-0 bottom-0 right-0 left-0">
                     <img alt="user profile image" decoding="async" data-nimg="fill" className="block h-full object-cover object-center rounded-[inherit] rounded-b-[16px]" src="/assets/image/upload/v1778019433/Testimonial-4_svedeo.webp" style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
