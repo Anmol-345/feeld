@@ -1,6 +1,10 @@
-﻿import { navbarContent, TELEGRAM_URL } from '../app/content';
+"use client";
+import React, { useState } from 'react';
+import { navbarContent, TELEGRAM_URL } from '../app/content';
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div id="navbar" className="fixed z-20 w-full nav-container" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)", opacity: "1", visibility: "inherit" }}>
     <div className="navbar flex flex-col items-center py-6 relative z-40 bg-homepage-bg text-homepage-text" data-testid="navbar" style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}>
@@ -14,9 +18,13 @@ export default function Navbar() {
           </a>
         </div>
         <div className="glass-bg p-2 flex justify-start max-lg:w-[56px] max-lg:h-[56px] relative rounded-[12px]">
-          <button data-testid="toggle_button_open" className="bg-nav-dark w-[40px] h-[40px] bg-no-repeat bg-center lg:hidden" aria-label="Navigation menu" />
-          <nav className="hidden lg:block">
-            <ul className="flex">
+          <button onClick={() => setIsOpen(!isOpen)} data-testid="toggle_button_open" className="bg-nav-dark w-[40px] h-[40px] bg-no-repeat bg-center lg:hidden" aria-label="Navigation menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6 m-auto text-white">
+              <path strokeLinecap="round" strokeLinejoin="round" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+            </svg>
+          </button>
+          <nav className={`${isOpen ? 'block absolute top-full right-0 w-max min-w-[200px] mt-2 bg-[#181424] rounded-xl p-4 shadow-lg z-50 border border-[#2B263A]' : 'hidden'} lg:block lg:static lg:bg-transparent lg:p-0 lg:border-none`}>
+            <ul className={`flex ${isOpen ? 'flex-col gap-4' : 'flex-row'}`}>
               {navbarContent.links.map((link, idx) => (
                 <li key={idx} className="nav-link px-1 false first-of-type:ml-0 text-l cursor-pointer" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)", opacity: "1" }}>
                   <a href={link.href} className="py-2 inline-block rounded-[4px] px-3 hover:text-primary-white hover:bg-black/40">
@@ -24,7 +32,7 @@ export default function Navbar() {
                   </a>
                 </li>
               ))}
-              <li className="mx-4 h-[1.5em] w-px self-center bg-white/20" aria-hidden="true" />
+              <li className={`mx-4 h-[1.5em] w-px self-center bg-white/20 ${isOpen ? 'hidden' : 'block'}`} aria-hidden="true" />
               <li className="nav-link false text-secondary-darkGray p-2 pr-6 first-of-type:ml-0 text-l" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)", opacity: "1" }}>
                 <a href="/search">
                   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" className="svg-inline--fa fa-magnifying-glass w-[20px] hover:!text-[#7d7d7d]" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style={{ color: "rgb(237, 237, 237)" }}>

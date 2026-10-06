@@ -123,12 +123,21 @@ export default function MainContent() {
             </div>
           </div>
         </div>
-        <div className="tagsContainer flex flex-col items-center gap-1 tablet:gap-4 laptop:gap-4 h-min w-min absolute top-[60%] tablet:top-[50%] laptop:top-[50%] overflow-visible z-[1]">
+          <div className="tagsContainer w-full max-w-full flex flex-col items-center gap-1 tablet:gap-4 laptop:gap-4 h-min absolute top-[60%] tablet:top-[50%] laptop:top-[50%] overflow-visible z-[1]">
+            <style>{`
+              .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+              }
+              .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+              }
+            `}</style>
           <div className="maskContainer w-screen absolute h-[130px] hidden tablet:flex laptop:flex">
             <div className="rightMask mask-gradient absolute w-full h-full top-0 right-0 opacity-100 max-w-[100px] tablet:max-w-[200px] laptop:max-w-[200px] z-[1]" style={{ "--gradient-side": "90deg", "--gradient-color-rgb": "9,5,22" }} />
             <div className="leftMask mask-gradient absolute w-full h-full top-0 left-0 opacity-100 max-w-[100px] tablet:max-w-[200px] laptop:max-w-[200px] z-[1]" style={{ "--gradient-side": "270deg", "--gradient-color-rgb": "9,5,22" }} />
           </div>
-                    <div data-direction="left" className="tagLineContainer flex flex-row items-center gap-2 tablet:gap-4 laptop:gap-4 h-9 tablet:h-14 laptop:h-14 relative z-1 overflow-visible" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)" }}>
+                    <div data-direction="left" className="tagLineContainer flex flex-row items-center gap-2 tablet:gap-4 laptop:gap-4 h-9 tablet:h-14 laptop:h-14 relative z-1 overflow-x-auto hide-scrollbar whitespace-nowrap snap-x w-full px-4" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)" }}>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
                 { "Coffee" }
@@ -170,7 +179,7 @@ export default function MainContent() {
               </div>
             </div>
           </div>
-          <div data-direction="right" className="tagLineContainer flex flex-row items-center gap-2 tablet:gap-4 laptop:gap-4 h-9 tablet:h-14 laptop:h-14 relative z-1 overflow-visible" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)" }}>
+          <div data-direction="right" className="tagLineContainer flex flex-row items-center gap-2 tablet:gap-4 laptop:gap-4 h-9 tablet:h-14 laptop:h-14 relative z-1 overflow-x-auto hide-scrollbar whitespace-nowrap snap-x w-full px-4" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)" }}>
             <div className="taglineItemContainer flex flex-row h-min w-min py-1 px-4 tablet:py-3 tablet:px-8 laptop:py-3 laptop:px-8 gap-2 tablet:gap-4 laptop:gap-4 items-center border-[1.8px] rounded-[200px] border-solid border-[#2b263a] bg-[#181424] opacity-100 ">
               <div className="tagLineItem text-nowrap text-center font-feeld font-normal tracking-[-0.14px] tablet:tracking-[-0.25px] laptop:tracking-[-0.25px] leading-[140%] text-[14px] tablet:text-[22px] laptop:text-[22px] text-primary-onSurface">
                 { "TOKEN2049" }

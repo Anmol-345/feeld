@@ -20,10 +20,19 @@ export default function FeaturesTabs() {
         <div className="features">
           <div className="tabsContainer">
             <div className="tabsContentContainer flex flex-col gap-5 tablet:gap-9 laptop:gap-9">
-              <div className="relative">
-                <div className="tabs flex flex-row overflow-hidden ">
+              <div className="relative w-full">
+                <style>{`
+                  .hide-scrollbar::-webkit-scrollbar {
+                    display: none;
+                  }
+                  .hide-scrollbar {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                  }
+                `}</style>
+                <div className="tabs flex flex-row overflow-x-auto hide-scrollbar whitespace-nowrap snap-x">
                   
-  <div id="tab-interests" className="tabContainer flex-1">
+  <div id="tab-interests" className="tabContainer flex-none snap-start">
     <button type="button" onClick={() => setActiveTab(0)} className="tab py-4 cursor-pointer px-8 laptop:px-5 group w-full border-solid border-[#2B263A] border-b">
       <div className={"textContainer flex items-center justify-center whitespace-nowrap font-feeld text-[14px] laptop:text-[16px] font-normal leading-[150%] " + (activeTab === 0 ? "text-secondary-onSurface" : "text-secondary-onSurfaceTertiary") + " group-hover:text-primary-white"}>
         {"Find your crowd"}
@@ -33,7 +42,7 @@ export default function FeaturesTabs() {
   </div>
   
                   
-  <div id="tab-desire tags" className="tabContainer flex-1">
+  <div id="tab-desire tags" className="tabContainer flex-none snap-start">
     <button type="button" onClick={() => setActiveTab(1)} className="tab py-4 cursor-pointer px-8 laptop:px-5 group w-full border-solid border-[#2B263A] border-b">
       <div className={"textContainer flex items-center justify-center whitespace-nowrap font-feeld text-[14px] laptop:text-[16px] font-normal leading-[150%] " + (activeTab === 1 ? "text-secondary-onSurface" : "text-secondary-onSurfaceTertiary") + " group-hover:text-primary-white"}>
         {"Event tags"}
@@ -43,7 +52,7 @@ export default function FeaturesTabs() {
   </div>
   
                   
-  <div id="tab-longform bios" className="tabContainer flex-1">
+  <div id="tab-longform bios" className="tabContainer flex-none snap-start">
     <button type="button" onClick={() => setActiveTab(2)} className="tab py-4 cursor-pointer px-8 laptop:px-5 group w-full border-solid border-[#2B263A] border-b">
       <div className={"textContainer flex items-center justify-center whitespace-nowrap font-feeld text-[14px] laptop:text-[16px] font-normal leading-[150%] " + (activeTab === 2 ? "text-secondary-onSurface" : "text-secondary-onSurfaceTertiary") + " group-hover:text-primary-white"}>
         {"Startup bios"}
@@ -53,7 +62,7 @@ export default function FeaturesTabs() {
   </div>
   
                   
-  <div id="tab-always ad-free" className="tabContainer flex-1">
+  <div id="tab-always ad-free" className="tabContainer flex-none snap-start">
     <button type="button" onClick={() => setActiveTab(3)} className="tab py-4 cursor-pointer px-8 laptop:px-5 group w-full border-solid border-[#2B263A] border-b">
       <div className={"textContainer flex items-center justify-center whitespace-nowrap font-feeld text-[14px] laptop:text-[16px] font-normal leading-[150%] " + (activeTab === 3 ? "text-secondary-onSurface" : "text-secondary-onSurfaceTertiary") + " group-hover:text-primary-white"}>
         {"Verified attendees"}
@@ -63,7 +72,7 @@ export default function FeaturesTabs() {
   </div>
   
                   
-  <div id="tab-hidden bios" className="tabContainer flex-1">
+  <div id="tab-hidden bios" className="tabContainer flex-none snap-start">
     <button type="button" onClick={() => setActiveTab(4)} className="tab py-4 cursor-pointer px-8 laptop:px-5 group w-full border-solid border-[#2B263A] border-b">
       <div className={"textContainer flex items-center justify-center whitespace-nowrap font-feeld text-[14px] laptop:text-[16px] font-normal leading-[150%] " + (activeTab === 4 ? "text-secondary-onSurface" : "text-secondary-onSurfaceTertiary") + " group-hover:text-primary-white"}>
         {"Private mode"}
@@ -73,7 +82,7 @@ export default function FeaturesTabs() {
   </div>
   
                 </div>
-                <div className="scrim absolute top-0 right-0 w-[32px] h-full bg-[linear-gradient(90deg,_rgba(9,_5,_22,_0.00)_5.49%,_#090516_100%)] laptop:hidden" />
+                <div className="scrim absolute top-0 right-0 w-[32px] h-full bg-[linear-gradient(90deg,_rgba(9,_5,_22,_0.00)_5.49%,_#090516_100%)] laptop:hidden pointer-events-none" />
               </div>
               <div className="contentContainer flex w-full relative h-auto min-h-[420px] tablet:min-h-[420px] laptop:min-h-[420px] laptop:max-h-[520px]">
                 <div className="flex relative w-full">
