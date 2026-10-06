@@ -23,7 +23,7 @@ export default function Navbar() {
               <path strokeLinecap="round" strokeLinejoin="round" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
             </svg>
           </button>
-          <nav className={`${isOpen ? 'block absolute top-full right-0 w-max min-w-[200px] mt-2 bg-[#181424] rounded-xl p-4 shadow-lg z-50 border border-[#2B263A]' : 'hidden'} lg:block lg:static lg:bg-transparent lg:p-0 lg:border-none`}>
+          <nav className={`${isOpen ? 'block absolute top-full left-0 w-max min-w-[200px] mt-2 bg-[#181424] rounded-xl p-4 shadow-lg z-50 border border-[#2B263A]' : 'hidden'} lg:block lg:static lg:bg-transparent lg:p-0 lg:border-none`}>
             <ul className={`flex ${isOpen ? 'flex-col gap-4' : 'flex-row'}`}>
               {navbarContent.links.map((link, idx) => (
                 <li key={idx} className="nav-link px-1 false first-of-type:ml-0 text-l cursor-pointer" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)", opacity: "1" }}>

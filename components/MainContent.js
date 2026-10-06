@@ -1097,9 +1097,18 @@ export default function MainContent() {
           </h5>
         </div>
         <div className="contentContainer">
-          <div className="embla__viewport overflow-visible">
-            <div className="embla__container w-full flex gap-4 tablet:gap-5 laptop:gap-5" style={{ transform: "translate3d(0px, 0px, 0px)" }}>
-              <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(101, 33, 132)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
+          <div className="embla__viewport overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-4">
+            <style>{`
+              .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+              }
+              .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+              }
+            `}</style>
+            <div className="embla__container w-max flex gap-4 tablet:gap-5 laptop:gap-5" style={{ transform: "translate3d(0px, 0px, 0px)" }}>
+              <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform snap-center" style={{ backgroundColor: "rgb(101, 33, 132)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
                     {"“I met someone on TokenMingle who opened a new partnership door and gave me hope for networking. Totally did not expect it, nor was I ready for it (oh, and their office is ten minutes away from me!) Sometimes the most beautiful collaborations arise when you least expect it.”"}
@@ -1156,7 +1165,7 @@ export default function MainContent() {
                   </div>
                 </div>
               </div>
-              <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(57, 74, 203)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
+              <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform snap-center" style={{ backgroundColor: "rgb(57, 74, 203)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
                     {"“I recently recommended TokenMingle to a founder who was struggling to find the right early-stage investors. It really allows for open communication where there is less pressure to pitch perfectly.”"}
@@ -1213,7 +1222,7 @@ export default function MainContent() {
                   </div>
                 </div>
               </div>
-              <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(0, 140, 86)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
+              <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform snap-center" style={{ backgroundColor: "rgb(0, 140, 86)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
                     {"“TokenMingle, in my opinion, is the one app that allows you to lose any expectations around networking. I’ve met investors and investors-turned friends for life, and my next connection could be one of the above or something completely new, and that’s the beauty of being here.”"}
@@ -1270,7 +1279,7 @@ export default function MainContent() {
                   </div>
                 </div>
               </div>
-              <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform" style={{ backgroundColor: "rgb(99, 12, 0)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
+              <div className="testimonialCarouselItemContainer w-[260px] min-w-[260px] rounded-t-[12px] rounded-bl-[12px] h-min p-3 tablet:p-4 laptop:p-4 flex flex-col gap-14 justify-between will-change-transform snap-center" style={{ backgroundColor: "rgb(99, 12, 0)", translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 0px)" }}>
                 <div className="textContent">
                   <p className="text-primary-white font-feeld text-[18px] tablet:text-[20px] latop:text-[20px] leading-[150%]">
                     {"“My first TokenMingle experience; I was fortunate to be asked by someone who was organising a private side event to attend. I met some amazing builders and it opened up my eyes to a multitude of partnership possibilities and how people feel open enough to share their big ideas.”"}
