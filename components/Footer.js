@@ -1,6 +1,9 @@
+"use client";
+import React, { useState } from 'react';
 import { footerContent } from '../app/content';
 
 export default function Footer() {
+  const [openSections, setOpenSections] = useState({});
   return (
     <footer className="bg-homepage-bg text-homepage-text footer lg:flex lg:lg:justify-center">
     <div className="max-w-[1440px] w-full px-[16px] lg:px-[44px] pb-8">
@@ -33,12 +36,17 @@ export default function Footer() {
           </form>
         </div>
         <div className="lg:flex lg:gap-8 lg:flex-1">
-          {footerContent.columns.map((col, idx) => (
+          {footerContent.columns.map((col, idx) => {
+            const isOpen = !!openSections[idx];
+            return (
             <section key={idx} className="border-b border-secondary-darkGray lg:w-1/4 lg:border-none">
-              <header className="flex items-center place-content-between lg:pt-0 pt-5 mb-5 cursor-pointer after:w-[20px] after:h-[20px] after:bg-arrow-down-light lg:cursor-auto lg:after:bg-none lg:font-normal after:lg:hidden">
+              <header onClick={() => setOpenSections(prev => ({ ...prev, [idx]: !prev[idx] }))} className="flex items-center place-content-between lg:pt-0 pt-5 mb-5 cursor-pointer lg:cursor-auto lg:font-normal">
                 {col.title}
+                <svg className="w-5 h-5 lg:hidden transition-transform duration-300" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
               </header>
-              <ul className="ml-4 mb-9 hidden lg:ml-0 lg:mb-0 lg:block">
+              <ul className={`ml-4 mb-9 ${isOpen ? 'block' : 'hidden'} lg:ml-0 lg:mb-0 lg:block`}>
                 {col.links.map((link, lidx) => (
                   <li key={lidx} className="my-2 font-light">
                     <a href={link.href}>
@@ -48,7 +56,7 @@ export default function Footer() {
                 ))}
               </ul>
             </section>
-          ))}
+          )})}
         </div>
         <div className="lg:ml-auto">
           <h3 className="text-[16px] font-feeld font-sans-serif mb-6 lg:mt-0 mt-6">

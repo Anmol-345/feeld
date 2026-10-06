@@ -84,9 +84,9 @@ export default function FeaturesTabs() {
                 </div>
                 <div className="scrim absolute top-0 right-0 w-[32px] h-full bg-[linear-gradient(90deg,_rgba(9,_5,_22,_0.00)_5.49%,_#090516_100%)] laptop:hidden pointer-events-none" />
               </div>
-              <div className="contentContainer flex w-full relative h-auto min-h-[420px] tablet:min-h-[420px] laptop:min-h-[420px] laptop:max-h-[520px]">
+              <div className="contentContainer flex w-full relative h-auto min-h-[750px] tablet:min-h-[420px] laptop:min-h-[420px] laptop:max-h-[520px]">
                 <div className="flex relative w-full">
-                  <div className={"featurePanel flex flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 transition-all duration-500 " + (activeTab === 0 ? "" : "invisible")} style={{ opacity: activeTab === 0 ? 1 : 0, zIndex: activeTab === 0 ? 10 : 0 }}>
+                  <div className={"featurePanel flex flex-col tablet:flex-row laptop:flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 transition-all duration-500 " + (activeTab === 0 ? "" : "invisible")} style={{ opacity: activeTab === 0 ? 1 : 0, zIndex: activeTab === 0 ? 10 : 0 }}>
                     <div className="leftContent flex-1 h-min">
                       <div className="mediaContainer h-min relative w-full flex m-0">
                         <video src="/feeld/media/01_Features-Interests_1308x1040_j2rzyz.webm" autoplay muted loop playsInline className="relative object-cover rounded-b-[16px] rounded-tr-[16px] aspect-5/4" preload="none" />
@@ -126,7 +126,7 @@ export default function FeaturesTabs() {
                       </div>
                     </div>
                   </div>
-                  <div className={"featurePanel flex flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 transition-all duration-500 " + (activeTab === 1 ? "" : "invisible")} style={{ opacity: activeTab === 1 ? 1 : 0, zIndex: activeTab === 1 ? 10 : 0 }}>
+                  <div className={"featurePanel flex flex-col tablet:flex-row laptop:flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 transition-all duration-500 " + (activeTab === 1 ? "" : "invisible")} style={{ opacity: activeTab === 1 ? 1 : 0, zIndex: activeTab === 1 ? 10 : 0 }}>
                     <div className="leftContent flex-1 h-min">
                       <div className="mediaContainer h-min relative w-full flex m-0">
                         <video src="/feeld/media/02-features-desires.av1_kgytg3.mp4" autoplay muted loop playsInline className="relative object-cover rounded-b-[16px] rounded-tr-[16px] aspect-5/4" preload="none" />
@@ -166,7 +166,7 @@ export default function FeaturesTabs() {
                       </div>
                     </div>
                   </div>
-                  <div className={"featurePanel flex flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 transition-all duration-500 " + (activeTab === 2 ? "" : "invisible")} style={{ opacity: activeTab === 2 ? 1 : 0, zIndex: activeTab === 2 ? 10 : 0 }}>
+                  <div className={"featurePanel flex flex-col tablet:flex-row laptop:flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 transition-all duration-500 " + (activeTab === 2 ? "" : "invisible")} style={{ opacity: activeTab === 2 ? 1 : 0, zIndex: activeTab === 2 ? 10 : 0 }}>
                     <div className="leftContent flex-1 h-min">
                       <div className="mediaContainer h-min relative w-full flex m-0">
                         <video src="/feeld/media/03-features-long-bios.av1_fprh7y.mp4" autoplay muted loop playsInline className="relative object-cover rounded-b-[16px] rounded-tr-[16px] aspect-5/4" preload="none" />
@@ -206,7 +206,7 @@ export default function FeaturesTabs() {
                       </div>
                     </div>
                   </div>
-                  <div className={"featurePanel flex flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 transition-all duration-500 " + (activeTab === 3 ? "" : "invisible")} style={{ opacity: activeTab === 3 ? 1 : 0, zIndex: activeTab === 3 ? 10 : 0 }}>
+                  <div className={"featurePanel flex flex-col tablet:flex-row laptop:flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 transition-all duration-500 " + (activeTab === 3 ? "" : "invisible")} style={{ opacity: activeTab === 3 ? 1 : 0, zIndex: activeTab === 3 ? 10 : 0 }}>
                     <div className="leftContent flex-1 h-min">
                       <div className="mediaContainer h-min relative w-full flex m-0">
                         <video src="/feeld/media/04-features-images.av1_rqkehn.mp4" autoplay muted loop playsInline className="relative object-cover rounded-b-[16px] rounded-tr-[16px] aspect-5/4" preload="none" />
@@ -246,7 +246,7 @@ export default function FeaturesTabs() {
                       </div>
                     </div>
                   </div>
-                  <div className={"featurePanel flex flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 transition-all duration-500 " + (activeTab === 4 ? "" : "invisible")} style={{ opacity: activeTab === 4 ? 1 : 0, zIndex: activeTab === 4 ? 10 : 0 }}>
+                  <div className={"featurePanel flex flex-col tablet:flex-row laptop:flex-row w-full gap-6 laptop:gap-16 items-stretch h-min absolute top-0 left-0 right-0 bottom-0 transition-all duration-500 " + (activeTab === 4 ? "" : "invisible")} style={{ opacity: activeTab === 4 ? 1 : 0, zIndex: activeTab === 4 ? 10 : 0 }}>
                     <div className="leftContent flex-1 h-min">
                       <div className="mediaContainer h-min relative w-full flex m-0">
                         <video src="/feeld/media/05_Features-Hidden_Bio_1308x1040_mwik5k.webm" autoplay muted loop playsInline className="relative object-cover rounded-b-[16px] rounded-tr-[16px] aspect-5/4" preload="none" />
